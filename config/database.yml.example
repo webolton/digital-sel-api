@@ -1,0 +1,19 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: dsel_development
+  pool: 5
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: dsel_test
+  pool: 5
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database:
+  pool: 5
+  username:
+  password:
