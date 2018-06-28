@@ -8,6 +8,7 @@ ruby '2.4.4'
 gem 'dotenv-rails', require: 'dotenv/rails-now'
 gem 'rails', '~> 5.2.0'
 gem 'pg'
+gem 'devise'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
