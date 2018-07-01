@@ -8,7 +8,8 @@ RSpec.describe Users::RegistrationsController do
   end
 
   subject(:do_action) { post :create, params: params }
-  let(:params) { { user: { email: 'user@example.com', password: 'password' } } }
+  let(:email) { 'user@example.com' }
+  let(:params) { { user: { email: email, password: 'password' } } }
 
   context 'when user is unauthenticated' do
     it_behaves_like 'a successful request'
@@ -20,6 +21,30 @@ RSpec.describe Users::RegistrationsController do
     it 'returns the correct JSON shape' do
       do_action
       expect(response.body).to eq({ success: { email: 'user@example.com' } }.to_json)
+    end
+
+    context 'when the email is already taken' do
+      let!(:user) { create(:user) }
+      let(:email) { user.email }
+
+      it_behaves_like 'a bad request'
+
+      it 'throws the correct error' do
+        do_action
+        expect(response.body).to eq({ errors: { email: ['Email has already been taken.'] } }.to_json)
+      end
+    end
+
+    context 'when the parameters are empty' do
+      let(:params) { { user: { } } }
+
+      it_behaves_like 'a bad request'
+
+      it 'throws the correct error' do
+        do_action
+        expect(response.body).to eq({ errors: { email: ['can\'t be blank'],
+                                                password: ['can\'t be blank'] } }.to_json)
+      end
     end
   end
 end
