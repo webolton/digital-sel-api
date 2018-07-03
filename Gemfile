@@ -9,7 +9,8 @@ gem 'dotenv-rails', require: 'dotenv/rails-now'
 gem 'rails', '~> 5.2.0'
 gem 'pg'
 gem 'devise'
-gem 'devise-jwt'
+gem 'devise-jwt', '~> 0.5.7'
+gem 'rack-cors', require: 'rack/cors'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
