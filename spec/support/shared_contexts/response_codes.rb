@@ -13,3 +13,10 @@ shared_context 'a bad request' do
     expect(response.status).to eq(400)
   end
 end
+
+shared_context 'an unauthorized request' do
+  it 'returns a UNAUTHORISED (401) status code' do
+    do_action
+    expect(response.status).to eq(401)
+  end
+end
