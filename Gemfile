@@ -5,15 +5,14 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.4.4'
 
-gem 'dotenv-rails', require: 'dotenv/rails-now'
-gem 'rails', '~> 5.2.0'
-gem 'pg'
 gem 'devise'
 gem 'devise-jwt', '~> 0.5.7'
+gem 'dotenv-rails', require: 'dotenv/rails-now'
+gem 'pg'
+gem 'puma', '~> 3.11' # app server
 gem 'rack-cors', require: 'rack/cors'
+gem 'rails', '~> 5.2.0'
 
-# Use Puma as the app server
-gem 'puma', '~> 3.11'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
@@ -34,9 +33,10 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # gem 'rack-cors'
 
 group :development, :test do
+  gem 'factory_bot_rails'
   gem 'pry'
   gem 'rspec-rails'
-  gem 'factory_bot_rails'
+  gem 'rubocop-rails'
 end
 
 group :development do
@@ -45,7 +45,6 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
-
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

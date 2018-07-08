@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Users::RegistrationsController do
@@ -16,7 +18,7 @@ RSpec.describe Users::RegistrationsController do
       it_behaves_like 'a successful request'
 
       it 'creates a new user' do
-        expect{ do_action }.to change{ User.count }.by(1)
+        expect { do_action }.to change { User.count }.by(1)
       end
 
       it 'returns the correct JSON shape' do
@@ -37,7 +39,7 @@ RSpec.describe Users::RegistrationsController do
       end
 
       context 'when the parameters are empty' do
-        let(:params) { { user: { } } }
+        let(:params) { { user: {} } }
 
         it_behaves_like 'a bad request'
 

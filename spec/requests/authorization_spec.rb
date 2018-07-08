@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 # The authorization header is not available in controller specs
@@ -24,7 +26,7 @@ RSpec.describe 'POST /users/sign_in', type: :request do
   end
 
   context 'when login params are incorrect' do
-  let(:params) { { user: { email: 'fake_email@catmail.com', password: 'fake_password' } } }
+    let(:params) { { user: { email: 'fake_email@catmail.com', password: 'fake_password' } } }
 
     it_behaves_like 'an unauthorized request'
   end
