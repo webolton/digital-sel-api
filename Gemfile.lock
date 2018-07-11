@@ -48,6 +48,7 @@ GEM
     bootsnap (1.3.0)
       msgpack (~> 1.0)
     builder (3.2.3)
+    cancancan (2.2.0)
     coderay (1.1.2)
     concurrent-ruby (1.0.5)
     crass (1.0.4)
@@ -214,6 +215,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap (>= 1.1.0)
+  cancancan (~> 2.0)
   devise
   devise-jwt (~> 0.5.7)
   dotenv-rails
