@@ -32,11 +32,8 @@ RSpec.describe 'POST /users/sign_in', type: :request do
   end
 end
 
-# RSpec.describe 'DELETE /logout', type: :request do
-#   let(:url) { '/logout' }
+RSpec.describe 'DELETE /users/sign_out', type: :request do
+  subject(:do_action) { delete '/users/sign_out' }
 
-#   it 'returns 204, no content' do
-#     delete url
-#     expect(response).to have_http_status(204)
-#   end
-# end
+  it_behaves_like 'a sign_out request'
+end

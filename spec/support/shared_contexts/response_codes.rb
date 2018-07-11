@@ -7,6 +7,13 @@ shared_context 'a successful request' do
   end
 end
 
+shared_context 'a sign_out request' do
+  it 'returns a NO CONTENT (204) status code' do
+    do_action
+    expect(response.status).to eq(204)
+  end
+end
+
 shared_context 'a bad request' do
   it 'returns a BAD REQUEST (400) status code' do
     do_action
