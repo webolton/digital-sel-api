@@ -47,12 +47,10 @@ Metrics/BlockLength:
   Max: 100
 
 Layout/EmptyLinesAroundClassBody:
-  Enabled: empty_lines
+  Enabled: false
 
 Style/EmptyMethod:
   Enabled: false
 
 Documentation:
   Enabled: false
-
-
