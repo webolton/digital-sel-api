@@ -1,11 +1,15 @@
+# frozen_string_literal: true
+
 class Ability
   include CanCan::Ability
 
   def initialize(user)
-    if user.present?  # additional permissions for logged in users (they can manage their posts)
-      if user.admin?  # additional permissions for administrators
-        can :manage, :all
-      end
+    false if user.blank?
+
+    if user.admin?
+      can :manage, :all
+    else
+      can %i[update show], User, id: user.id
     end
     # Define abilities for the passed in user here. For example:
     #
