@@ -15,10 +15,9 @@ RSpec.describe Users::RegistrationsController do
     let(:email) { 'user@example.com' }
     let(:first_name) { 'Geoffery' }
     let(:last_name) { 'Chaucer' }
-    let(:params) { { user: {
-                             email: email, password: 'password',
-                             first_name: first_name, last_name: last_name
-                  } } }
+    let(:params) do
+      { user: { email: email, password: 'password', first_name: first_name, last_name: last_name } }
+    end
 
     context 'when user is unauthenticated' do
       it_behaves_like 'a successful request'
@@ -54,8 +53,8 @@ RSpec.describe Users::RegistrationsController do
           expect(response.body).to eq({ errors: { email:      ['Email cannot be blank', 'Email invalid'],
                                                   password:   ['Password cannot be blank'],
                                                   first_name: ['First name cannot be blank'],
-                                                  last_name:  ['Last name cannot be blank']
-                                                } }.to_json)
+                                                  last_name:  ['Last name cannot be blank'] } }
+                                                  .to_json)
         end
       end
     end
