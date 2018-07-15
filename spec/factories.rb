@@ -8,9 +8,9 @@ FactoryBot.define do
     first_name "Geoffery#{Random.rand(200)}"
     last_name  "Chaucer#{Random.rand(200)}"
     password   SecureRandom.base58
-  end
 
-  factory :admin, class: User do
-    admin    true
+    factory :admin do
+      admin true
+    end
   end
 end
