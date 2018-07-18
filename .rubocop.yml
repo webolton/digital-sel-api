@@ -38,6 +38,12 @@ Layout/EmptyLinesAroundBlockBody:
     - "spec/**/*"
     - "lib/tasks/*.rake"
 
+Layout/SpaceBeforeBlockBraces:
+  Enabled: false
+
+Layout/EmptyLinesAroundClassBody:
+  Enabled: false
+
 Style/SymbolArray:
   Exclude:
     - 'Gemfile'
@@ -45,9 +51,6 @@ Style/SymbolArray:
 Metrics/BlockLength:
   CountComments: false
   Max: 100
-
-Layout/EmptyLinesAroundClassBody:
-  Enabled: false
 
 Style/EmptyMethod:
   Enabled: false
