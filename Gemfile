@@ -35,9 +35,10 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
   gem 'factory_bot_rails'
+  gem 'faker'
   gem 'pry'
   gem 'rspec-rails'
-  gem 'rubocop-rails'
+  gem 'rubocop-rails_config'
 end
 
 group :development do
