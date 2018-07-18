@@ -1,14 +1,17 @@
 # frozen_string_literal: true
 
-require 'securerandom'
-
 FactoryBot.define do
   factory :user do
-    email      "email#{Random.rand(10)}@email.com"
-    first_name "Geoffery#{Random.rand(200)}"
-    last_name  "Chaucer#{Random.rand(200)}"
-    password   SecureRandom.base58
-
+    sequence :email do |n|
+      "chaucerpants#{n}@digital-sel.com"
+    end
+    sequence :first_name do |n|
+      "Geoffery#{n}"
+    end
+    sequence :last_name do |n|
+      "Chaucer#{n}"
+    end
+    password Faker::Crypto.sha1
     factory :admin do
       admin true
     end
