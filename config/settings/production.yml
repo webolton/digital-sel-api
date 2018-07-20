@@ -1,0 +1,2 @@
+devise:
+  devise_jwt_secret_key: ENV['DEVISE_JWT_SECRET_KEY']
