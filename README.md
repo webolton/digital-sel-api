@@ -17,12 +17,12 @@ For more information about the project see the
 
 **_Caveat lector_**
 
-This README is _verbose_. It includes basic info for experienced software engineers, but is also
-intended for readers who might need more context. If you have questions or suggestions, feel free to
-open an issue.
+This README is more verbose than most. It includes basic info for experienced software engineers,
+but is also intended for readers who might need more context. If you have questions or suggestions,
+feel free to open an issue.
 
 If you are new to development and need help, please feel free to reach out to me via Twitter
-[e@william_ellet](https://twitter.com/william_ellet).
+[@william_ellet](https://twitter.com/william_ellet).
 
 ## Prerequisites
 
@@ -31,15 +31,24 @@ If you are new to development and need help, please feel free to reach out to me
 - Rails 5.2.0
 - [PostgreSQL](https://www.postgresql.org/)
 
+If you are not sure about how to install the prerequisites, follow this guide.
+
 ## Setup the project for development
 
-Copy `.env.example` to `.env`
+After you have your database server running, create and migrate the database:
 
-    cp .env.example .env
+    rails db:create
 
-For development, the only value in `.env` that needs to be set is the `DEVISE_JWT_SECRET_KEY`.
-Generate a secret with `rails secret` and set `DEVISE_JWT_SECRET_KEY` to that value:
+    rails db:migrate
 
-    `DEVISE_JWT_SECRET_KEY=5e0a3825a88d91903808ab20...9848970f45aebd`
+Run the server:
 
+    rails s
 
+## Run the tests
+
+    rspec
+
+## Run the linter
+
+    rubocop
