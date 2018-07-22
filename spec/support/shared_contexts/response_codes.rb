@@ -25,6 +25,6 @@ shared_context 'an unauthorized request' do
   it 'returns a UNAUTHORISED (401) status code' do
     do_action
     expect(response.status).to eq(401)
-    expect(JSON.parse(response.body)).to eq({ errors: ['Unauthorized'] }.with_indifferent_access)
+    expect(parsed_body).to eq({ errors: ['Unauthorized'] }.with_indifferent_access)
   end
 end
