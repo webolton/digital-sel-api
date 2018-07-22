@@ -20,9 +20,18 @@ RSpec.describe UsersController, type: :controller do
 
       it_behaves_like 'a successful request'
 
-      it 'returns the correct users shape' do
+      it 'returns all the users' do
         do_action
-        expect(JSON.parse(response.body)['users'].map{ |user| user['email'] }).to include(*User.all.map(&:email))
+        expect(parsed_body['users'].map{ |user| user['email'] }).to include(*User.all.map(&:email))
+      end
+
+      it 'returns a user in the right format' do
+        do_action
+        user_data = parsed_body['users'].first.to_hash
+        actual_user = User.find(user_data['id'])
+        expect(user_data).to eq({ id: actual_user.id, first_name: actual_user.first_name,
+                                  last_name: actual_user.last_name, email: actual_user.email }
+                                .with_indifferent_access)
       end
     end
   end
