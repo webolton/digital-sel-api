@@ -22,9 +22,17 @@ shared_context 'a bad request' do
 end
 
 shared_context 'an unauthorized request' do
-  it 'returns a UNAUTHORISED (401) status code' do
+  it 'returns a UNAUTHORISED (401) status code and the correct response body' do
     do_action
     expect(response.status).to eq(401)
     expect(parsed_body).to eq({ errors: ['Unauthorized'] }.with_indifferent_access)
+  end
+end
+
+shared_context 'a forbidden request' do
+  it 'returns a FORBIDDEN (403) status code and the correct response body' do
+    do_action
+    expect(response.status).to eq(403)
+    expect(parsed_body).to eq({ errors: ['Unpermitted action'] }.with_indifferent_access)
   end
 end

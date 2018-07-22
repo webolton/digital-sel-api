@@ -34,5 +34,12 @@ RSpec.describe UsersController, type: :controller do
                                 .with_indifferent_access)
       end
     end
+
+    context 'when a non-admin user is logged in' do
+      let(:user) { create(:user) }
+      before { jwt_sign_in(user) }
+
+      it_behaves_like 'a forbidden request'
+    end
   end
 end
