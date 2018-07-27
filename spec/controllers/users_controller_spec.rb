@@ -63,6 +63,12 @@ RSpec.describe UsersController, type: :controller do
         expect(parsed_body).to eq({ user: { id: user.id, first_name: user.first_name, last_name: user.last_name,
                                             email: user.email } }.with_indifferent_access)
       end
+
+      context 'when the user_id does not exist' do
+        let(:user_id) { 777_777_777_777 }
+
+        it_behaves_like 'a request for a missing resource', 'User'
+      end
     end
   end
 end

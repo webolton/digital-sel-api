@@ -21,6 +21,14 @@ shared_context 'a bad request' do
   end
 end
 
+shared_context 'a request for a missing resource' do |resource_name|
+  it 'returns a NOT FOUND (404) status code' do
+    do_action
+    expect(response.status).to eq(404)
+    expect(JSON.parse(response.body)['errors']).to eq(["#{resource_name} not found"])
+  end
+end
+
 shared_context 'an unauthorized request' do
   it 'returns a UNAUTHORISED (401) status code and the correct response body' do
     do_action
