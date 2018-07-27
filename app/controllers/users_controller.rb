@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    render json: { user: format_user(@user) }, status: 200
   end
 
   def create

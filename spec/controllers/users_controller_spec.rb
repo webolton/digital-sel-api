@@ -57,6 +57,12 @@ RSpec.describe UsersController, type: :controller do
       before { jwt_sign_in(admin) }
 
       it_behaves_like 'a successful request'
+
+      it 'returns the correct JSON shape' do
+        do_action
+        expect(parsed_body).to eq({ user: { id: user.id, first_name: user.first_name, last_name: user.last_name,
+                                            email: user.email } }.with_indifferent_access)
+      end
     end
   end
 end
