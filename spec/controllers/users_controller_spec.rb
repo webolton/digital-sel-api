@@ -42,4 +42,21 @@ RSpec.describe UsersController, type: :controller do
       it_behaves_like 'a forbidden request'
     end
   end
+
+  describe '#show' do
+    subject(:do_action) { get :show, params: { id: user_id } }
+    let(:user) { create(:user) }
+    let(:user_id) { user.id }
+
+    context 'when a user is not signed in' do
+      it_behaves_like 'an unauthorized request'
+    end
+
+    context 'when an admin is signed in' do
+      let(:admin) { create(:admin) }
+      before { jwt_sign_in(admin) }
+
+      it_behaves_like 'a successful request'
+    end
+  end
 end

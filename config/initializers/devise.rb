@@ -8,7 +8,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '000169e3c06658b1967318b0a1f317 not a real secret'
+  config.secret_key = Settings.devise.devise_jwt_secret_key
 
   # ==> JWT configuration
   config.jwt do |jwt|
