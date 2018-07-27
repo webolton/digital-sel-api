@@ -9,7 +9,7 @@ class ApplicationController < ActionController::API
     render json: { errors: ['Unpermitted action'] }, status: 403
   end
 
-  def resouce_not_found(error)
+  def resource_not_found(error)
     error_source = error.is_a?(String) ? error : error.model
     render json: { errors: ["#{error_source} not found"] }, status: 404
   end
