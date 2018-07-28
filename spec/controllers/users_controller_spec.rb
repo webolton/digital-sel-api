@@ -87,6 +87,31 @@ RSpec.describe UsersController, type: :controller do
         it_behaves_like 'a successful request'
       end
     end
+
+    context 'when a non-admin is logged in' do
+      let(:user) { create(:user) }
+      before { jwt_sign_in(user) }
+
+      context 'when a non-admin user tries to view another user' do
+        let(:other_user) { create(:user) }
+        let(:user_id) { other_user.id }
+
+        it_behaves_like 'a forbidden request'
+      end
+
+      context 'when a non-admin tries to view herself' do
+        let(:user_id) { user.id }
+
+        it_behaves_like 'a successful request'
+
+        it 'returns the correct JSON shape' do
+          do_action
+          expect(parsed_body).to eq({ user: { id: user.id, first_name: user.first_name, last_name: user.last_name,
+                                              email: user.email } }.with_indifferent_access)
+        end
+      end
+    end
+  end
   end
 end
 
