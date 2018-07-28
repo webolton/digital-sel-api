@@ -69,6 +69,49 @@ RSpec.describe UsersController, type: :controller do
 
         it_behaves_like 'a request for a missing resource', 'User'
       end
+
+      context 'when the user_id is not an integer or cannot be coerced to a string' do
+        let(:user_id) { 'four' }
+
+        it_behaves_like 'a bad request'
+
+        it 'returns the correct error message' do
+          do_action
+          expect(parsed_body).to eq({ errors: ['Invalid id format'] }.with_indifferent_access)
+        end
+      end
+
+      context 'when the id cast as a number' do
+        let(:user_id) { user.id.to_s }
+
+        it_behaves_like 'a successful request'
+      end
     end
   end
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -2,6 +2,7 @@
 
 class UsersController < ApplicationController
   before_action :authenticate_user!
+  before_action only: [:show] { validate_id(params[:id]) }
   load_and_authorize_resource
 
   def index
@@ -10,6 +11,8 @@ class UsersController < ApplicationController
   end
 
   def show
+    validate_id(params[:id])
+
     render json: { user: format_user(@user) }, status: 200
   end
 

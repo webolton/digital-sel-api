@@ -5,6 +5,11 @@ class ApplicationController < ActionController::API
   rescue_from CanCan::AccessDenied, with: :not_permitted_response
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+  def validate_id(id)
+    return if id.is_a?(Integer) || /\A[-+]?\d+\z/ === id
+    render json: { errors: ['Invalid id format'] }, status: 400
+  end
+
   def not_permitted_response
     render json: { errors: ['Unpermitted action'] }, status: 403
   end
