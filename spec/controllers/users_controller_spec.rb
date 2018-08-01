@@ -142,15 +142,27 @@ RSpec.describe UsersController, type: :controller do
         expect { do_action }.to change { User.count }.by(1)
       end
 
-      context 'when an invalid email is passed' do
+      context 'when an invalid email and first_name are passed' do
         let(:email) { 'ke$ha' }
+        let(:first_name) { '' }
 
         it_behaves_like 'a bad request'
 
         it 'returns the correct errors' do
           do_action
-          expect(parsed_body).to eq({ errors: ['Invalid email'] }.with_indifferent_access)
+          expect(parsed_body).to eq({ errors: ['Invalid email', 'First name cannot be blank'] }.with_indifferent_access)
         end
+      end
+    end
+
+    context 'when a non-admin user is logged in' do
+      let(:user) { create(:user) }
+      before { jwt_sign_in(user) }
+
+      it_behaves_like 'a forbidden request'
+
+      it 'does not create a new user' do
+        expect{ do_action }.not_to change(User.count)
       end
     end
   end
