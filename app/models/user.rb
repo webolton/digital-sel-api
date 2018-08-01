@@ -7,7 +7,6 @@ class User < ApplicationRecord
   validates :email, presence:   { message: 'Email cannot be blank' },
                     uniqueness: { message: 'Email has already been taken' },
                     format:     { with: Devise.email_regexp, message: 'Invalid email' }
-  validates :password, presence: { message: 'Password cannot be blank' }
   validates :first_name, presence: { message: 'First name cannot be blank' }
   validates :last_name, presence: { message: 'Last name cannot be blank' }
 end

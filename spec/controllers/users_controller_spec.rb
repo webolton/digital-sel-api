@@ -162,7 +162,29 @@ RSpec.describe UsersController, type: :controller do
       it_behaves_like 'a forbidden request'
 
       it 'does not create a new user' do
-        expect{ do_action }.not_to change(User.count)
+        expect{ do_action }.not_to(change { User.count })
+      end
+    end
+  end
+
+  describe '#update' do
+    subject(:do_action) do
+      post :update, params: { id: user_id, user: user_params }
+    end
+
+    let(:user) { create(:user) }
+    let(:user_id) { user.id }
+
+    context 'when an admin is logged in' do
+      let(:user_params) { { first_name: 'Margery', last_name: 'Kempe' } }
+      let(:admin) { create(:admin) }
+      before { jwt_sign_in(admin) }
+
+      it_behaves_like 'a successful request'
+
+      it 'successfully updates the user\'s name' do
+        do_action
+        expect(user.reload.first_name).to eq('Margery')
       end
     end
   end

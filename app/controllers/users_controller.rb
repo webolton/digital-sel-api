@@ -26,6 +26,11 @@ class UsersController < ApplicationController
   end
 
   def update
+    if @user.update(user_params)
+      render json: { success: 'User updated', user_id: @user.id }, status: 200
+    else
+      render_errors(@user)
+    end
   end
 
   def destroy
