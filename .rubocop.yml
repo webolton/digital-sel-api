@@ -25,6 +25,10 @@ Metrics/MethodLength:
 Metrics/ParameterLists:
   Enabled: false
 
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/controllers/**/*'
+
 Style/CaseEquality:
   Enabled: false
 

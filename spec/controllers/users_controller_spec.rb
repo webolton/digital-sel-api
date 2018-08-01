@@ -112,6 +112,32 @@ RSpec.describe UsersController, type: :controller do
       end
     end
   end
+
+  describe '#create' do
+    let(:first_name) { Faker::Name.first_name }
+    let(:last_name) { Faker::Name.last_name }
+    let(:email) { Faker::Internet.email }
+    let(:password) { Faker::Crypto.sha1 }
+    let(:password_confirmation) { password }
+    let(:user_params) do
+      { user:
+             { first_name:            first_name,
+               last_name:             last_name,
+               email:                 email,
+               password:              password,
+               password_confirmation: password_confirmation } }
+    end
+
+    subject(:do_action) do
+      post :create, params: user_params
+    end
+
+    context 'when an admin is logged in' do
+      let(:admin) { create(:admin) }
+      before { jwt_sign_in(admin) }
+
+      it_behaves_like 'a successfully created request'
+    end
   end
 end
 
