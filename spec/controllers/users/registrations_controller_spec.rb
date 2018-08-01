@@ -50,7 +50,7 @@ RSpec.describe Users::RegistrationsController do
 
         it 'throws the correct error' do
           do_action
-          expect(response.body).to eq({ errors: { email:      ['Email cannot be blank', 'Email invalid'],
+          expect(response.body).to eq({ errors: { email:      ['Email cannot be blank', 'Invalid email'],
                                                   password:   ['Password cannot be blank'],
                                                   first_name: ['First name cannot be blank'],
                                                   last_name:  ['Last name cannot be blank'] } }

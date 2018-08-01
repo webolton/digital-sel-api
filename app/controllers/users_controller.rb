@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     if user.save
       render json: { success: 'User created', user_id: user.id }, status: 201
     else
-      render json: { errors: [user.errors] }, status: 400
+      render_errors(user)
     end
   end
 

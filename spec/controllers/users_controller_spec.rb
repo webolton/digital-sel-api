@@ -137,6 +137,21 @@ RSpec.describe UsersController, type: :controller do
       before { jwt_sign_in(admin) }
 
       it_behaves_like 'a successfully created request'
+
+      it 'successfully creates a new user' do
+        expect { do_action }.to change { User.count }.by(1)
+      end
+
+      context 'when an invalid email is passed' do
+        let(:email) { 'ke$ha' }
+
+        it_behaves_like 'a bad request'
+
+        it 'returns the correct errors' do
+          do_action
+          expect(parsed_body).to eq({ errors: ['Invalid email'] }.with_indifferent_access)
+        end
+      end
     end
   end
 end
