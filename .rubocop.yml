@@ -16,6 +16,12 @@ Rails/HttpStatus:
 Metrics/AbcSize:
   Enabled: false
 
+Metrics/BlockLength:
+  CountComments: false
+  Max: 100
+  Exclude:
+    - 'spec/**/*'
+
 Metrics/LineLength:
   Max: 120
 
@@ -24,10 +30,6 @@ Metrics/MethodLength:
 
 Metrics/ParameterLists:
   Enabled: false
-
-Metrics/BlockLength:
-  Exclude:
-    - 'spec/controllers/**/*'
 
 Style/CaseEquality:
   Enabled: false
@@ -51,10 +53,6 @@ Layout/EmptyLinesAroundClassBody:
 Style/SymbolArray:
   Exclude:
     - 'Gemfile'
-
-Metrics/BlockLength:
-  CountComments: false
-  Max: 100
 
 Style/EmptyMethod:
   Enabled: false
