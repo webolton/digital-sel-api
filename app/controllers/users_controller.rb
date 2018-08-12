@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
+  include UsersControllerConcern
   before_action :authenticate_user!
   before_action only: [:show] { validate_id(params[:id]) }
   load_and_authorize_resource
@@ -37,10 +38,6 @@ class UsersController < ApplicationController
   end
 
   private
-
-  def format_user(user)
-    { id: user.id, first_name: user.first_name, last_name: user.last_name, email: user.email }
-  end
 
   def user_params
     params.require(:user).permit(:email, :first_name, :last_name, :password, :password_confirmation)

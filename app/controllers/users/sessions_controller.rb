@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Users::SessionsController < Devise::SessionsController
+  include UsersControllerConcern
   # before_action :configure_sign_in_params, only: [:create]
 
   # GET /resource/sign_in
@@ -30,7 +31,7 @@ class Users::SessionsController < Devise::SessionsController
   private
 
   def respond_with(resource, _opts = {})
-    render json: resource
+    render json: format_user(resource)
   end
 
   def respond_to_on_destroy

@@ -23,6 +23,17 @@ RSpec.describe 'POST /users/sign_in', type: :request do
       token = response.headers['Authorization'].split('Bearer ').last
       expect(JWT.decode(token, Settings.devise.devise_jwt_secret_key).first['sub']).to be_present
     end
+
+    it 'returns the correct user shape' do
+      do_action
+      new_user = User.last
+      expect(JSON.parse(response.body)).to eq(
+        {
+          id: new_user.id, email: new_user.email, first_name: new_user.first_name,
+          last_name: new_user.last_name
+        }.with_indifferent_access
+      )
+    end
   end
 
   context 'when login params are incorrect' do
