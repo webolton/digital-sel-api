@@ -30,8 +30,8 @@ RSpec.describe UsersController, type: :controller do
         user_data = parsed_body['users'].first.to_hash
         actual_user = User.find(user_data['id'])
         expect(user_data).to eq({ id: actual_user.id, first_name: actual_user.first_name,
-                                  last_name: actual_user.last_name, email: actual_user.email }
-                                .with_indifferent_access)
+                                  last_name: actual_user.last_name, email: actual_user.email,
+                                  admin: actual_user.admin }.with_indifferent_access)
       end
     end
 
@@ -61,7 +61,7 @@ RSpec.describe UsersController, type: :controller do
       it 'returns the correct JSON shape' do
         do_action
         expect(parsed_body).to eq({ user: { id: user.id, first_name: user.first_name, last_name: user.last_name,
-                                            email: user.email } }.with_indifferent_access)
+                                            email: user.email, admin: user.admin } }.with_indifferent_access)
       end
 
       context 'when the user_id does not exist' do
@@ -107,7 +107,7 @@ RSpec.describe UsersController, type: :controller do
         it 'returns the correct JSON shape' do
           do_action
           expect(parsed_body).to eq({ user: { id: user.id, first_name: user.first_name, last_name: user.last_name,
-                                              email: user.email } }.with_indifferent_access)
+                                              email: user.email, admin: user.admin } }.with_indifferent_access)
         end
       end
     end

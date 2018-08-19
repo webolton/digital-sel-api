@@ -30,7 +30,7 @@ RSpec.describe 'POST /users/sign_in', type: :request do
       expect(JSON.parse(response.body)).to eq(
         {
           id: new_user.id, email: new_user.email, first_name: new_user.first_name,
-          last_name: new_user.last_name
+          last_name: new_user.last_name, admin: new_user.admin
         }.with_indifferent_access
       )
     end
