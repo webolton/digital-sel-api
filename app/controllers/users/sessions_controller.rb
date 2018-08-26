@@ -35,6 +35,8 @@ class Users::SessionsController < Devise::SessionsController
   end
 
   def respond_to_on_destroy
+    Devise.sign_out_all_scopes ? sign_out : sign_out(resource_name)
+    yield if block_given?
     head :no_content
   end
 end
