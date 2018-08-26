@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
-  devise :database_authenticatable, :registerable, :jwt_authenticatable,
-         jwt_revocation_strategy: JWTBlacklist
+  include Devise::JWT::RevocationStrategies::JTIMatcher
+
+  devise :database_authenticatable, :registerable, :jwt_authenticatable, jwt_revocation_strategy: self
 
   validates :email, presence:   { message: 'Email cannot be blank' },
                     uniqueness: { message: 'Email has already been taken' },
