@@ -53,6 +53,12 @@ Though database state is not important to the software, it is very important to 
 
 Make a snapshot of the database:
 
+Run
+
+    make ENV=development snapshot
+
+or copy and paste
+
     pg_dump --no-acl --no-owner --clean dsel_development | gzip > dsel_development`date -u +'%Y-%m-%dT%H-%M-%SZ'`.sql.gz
 
 Restore a snapshot of the database:
