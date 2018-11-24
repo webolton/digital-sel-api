@@ -1,0 +1,64 @@
+siglum,shelfmark,country,city,repository,date,description,dialect,scribal_description,provenance,url,sc_number,notes,status,owned,price,major_ms
+A,"Oxford, Bodleian Library, Ashmole 43",,,,,,,,,,6924,,,false,false,true
+B,"Oxford, Bodleian Library, Bodley 779",,,,,,,,,,2567,,,Partial,true,true
+C,"Cambridge, Corpus Christi College 145",,,,,,,,,,,,,false,false,true
+D,"Oxford, Bodleian Library, Laud. Misc. 463",,,,,,,,,,1596,,,Partial,false,true
+E,"London, British Library, Egerton 1993",,,,,,,,,,,,,true,true,true
+F,"Cambridge, Fitzwilliam Museum, McClean 128",,,,,,,,,,,,,false,false,true
+G,"London, Lambeth Palace 223",,,,,,,,,,,,,false,false,true
+H,"London, British Library, Harley 2277",,,,,,,,,,,,,true,false,true
+I,"Cambridge, St. John’s College 28",,,,,,,,,,,,,false,false,true
+J,"London, British Library, Cotton Julius D ix",,,,,,,,,,,,,true,true,true
+K,"Cambridge, King’s College 13",,,,,,,,,,,,,false,false,true
+L,"Oxford, Bodleian Library, Laud. Misc. 108",,,,,,,,,,1486,,,false,false,true
+M,"London, British Library, Egerton 2810",,,,,,,,,,,,,true,false,true
+N,"London, British Library, Egerton 2891",,,,,,,,,,,,,true,false,true
+O,"Oxford, Trinity College 57",,,,,,,,,,,,,partial,false,true
+P,"Cambridge, Magdalene College, Pepys 2344",,,,,,,,,,,,,false,false,true
+Q,"London, British Library, Additional 10301",,,,,,,,,,,Cf. Qa and Ba,,true,false,true
+R,"Cambridge, Trinity College R.3.25 (605)",,,,,,,,,,,,,false,false,true
+S,"London, British Library, Stowe 949",,,,,,,,,,,,,true,false,true
+T,"Oxford, Bodleian Library, Tanner 17 ",,,,,,,,,,,,,false,false,true
+U,"Cambridge, Cambridge University Library, Additional 3039",,,,,,,,,,,,,false,false,true
+V,"Oxford, Bodleian Library, MS. Eng. Poet. a. 1 (The Vernon Manuscript)",,,,,,,,,,3938-42,,,true,true,true
+W,"Winchester, Winchester College 33",,,,,,,,,,,,,false,false,true
+X,"Oxford, Corpus Christi College 431",,,,,,,,,,,,,false,false,false
+Y,"Oxford, Bodleian Library, Additional C. 38",,,,,,,,,,30236,,,false,false,true
+Ar,"London, British Museum, Arundel 42",,,,,,,,,,,,,false,false,false
+Ba,"Oxford, Bodleian Library, Additional C. 220",,,,,,,,,,,,,false,false,false
+Bd,"Oxford, Bodleian Library, English Poetry d. 200",,,,,,,,,,,,,false,false,false
+Be,"Oxford, Bodleian Library, English Poetry e. 94",,,,,,,,,,,,,false,false,false
+Bp,"Oxford, Bodleian Library, English Poetry c. 3",,,,,,,,,,,,,false,false,false
+Br,"Oxford, Bodleian Library, Rawlinson Poetry 225",,,,,,,,,,29430,,,false,false,false
+Cd,"London, British Library, Cotton Cleopatra D ix",,,,,,,,,,,,,false,false,false
+Gr,"London, Gray’s Inn 20",,,,,,,,,,,,,false,false,false
+Ki,"Kilkenny, Kilkenny Liber Primus",,,,,,,,,,,,,false,false,false
+Lm,"Leicester, Leicester City Museum 18 D 59",,,,,,,,,,,,,false,false,false
+Pr,"London, Public Records Office, C. 47/34/1",,,,,,,,,,,,,false,false,false
+Rm,"Ripon, Ripon Minster Fragment 33",,,,,,,,,,,,,false,false,false
+Qa,"London, British Library, Additional 10626",,,,,,,,,,,,,true,false,false
+Qb,"London, British Library, Additional 24078",,,,,,,,,,,,,false,false,false
+Ua,"Cambridge, Cambridge University Library, Additional 2585 (3)",,,,,,,,,,,,,false,false,false
+Ub,"Cambridge, Cambridge University Library, Additional 4544",,,,,,,,,,,,,false,false,false
+Wa,"Aberystwyth, National Library of Wales 5043",,,,,,,,,,,,,false,false,false
+Wh,"Nottingham, Nottingham University Library Mi LM 7/1",,,,,,,,,,,,,false,false,false
+Wm,"Wisbech, Wisbech Town Library Museum 21",,,,,,,,,,,,,false,false,false
+Ax,"London, College of Arms, Aundel 127",,,,,,,,,,,,,false,false,false
+Az,"Edinburgh, National Library of Scotland, Advocates 23.7.11",,,,,,,,,,,,,false,false,false
+Cx,"London, British Library, Cotton Caligula A ii",,,,,,,,,,,,,false,false,false
+Dy,"Oxford, Bodleian Library, Digby 75",,,,,,,,,,1676,,,false,false,false
+Hx,"London, British Library, Harlely 2250",,,,,,,,,,,,,false,false,false
+Hy,"London, British Library, Harley 4012",,,,,,,,,,,,,true,false,false
+Hz,"San Marino, CA, Huntington Library, H.M. 64",,,,,,,,,,,,,false,false,false
+Ly,"Oxford, Bodleian Library, Laud. Misc. 685",,,,,,,,,,817,,,false,false,false
+Lz,"Leeds, University of Leeds Library, Brotherton 501",,,,,,,,,,,,,false,false,false
+Mz,"Minneapolis, University of Minnesota Z.822 N.81",,,,,,,,,,,,,false,false,false
+Ox,"Oxford, Corpus Christi College, 237",,,,,,,,,,,,,false,false,false
+Ry,"London, British Library, Royal 17 c.xvii",,,,,,,,,,,,,false,false,false
+Qx,"London, British Library, Additional 22283 (Simeon MS)",,,,,,,,,,,,,false,false,false
+Qy,"London, British Library, Additional 24542",,,,,,,,,,,,,false,false,false
+Qz,"London, British Library, Additional 36983",,,,,,,,,,,,,false,false,false
+Tx,"London, British Library, Cotton Titus A xxvi",,,,,,,,,,,,,false,false,false
+Uy,"Cambridge, Cambridge University Library Ee.2.15",,,,,,,,,,,,,false,false,false
+Uz,"Cambridge, Cambridge University Library Ff.5.48",,,,,,,,,,,,,false,false,false
+Tk,Takyama,,,,,,,,,,,,,false,false,false
