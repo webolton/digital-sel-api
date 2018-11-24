@@ -10,10 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_26_001123) do
+ActiveRecord::Schema.define(version: 2018_11_24_182355) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "manuscripts", force: :cascade do |t|
+    t.string "shelfmark"
+    t.string "siglum"
+    t.string "country"
+    t.string "city"
+    t.string "repository"
+    t.date "date"
+    t.text "description"
+    t.text "dialect"
+    t.text "scribal_description"
+    t.text "provenance"
+    t.string "url"
+    t.string "sc_number"
+    t.text "notes"
+    t.string "status"
+    t.string "owned"
+    t.float "price"
+    t.boolean "major_ms"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
