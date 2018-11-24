@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
+  factory :manuscript do
+  end
   factory :user do
     sequence :email do |n|
       "chaucerpants#{n}@digital-sel.com"
