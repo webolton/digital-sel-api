@@ -13,9 +13,9 @@ FactoryBot.define do
     sequence :last_name do |n|
       "Chaucer#{n}"
     end
-    password Faker::Crypto.sha1
+    password { Faker::Crypto.sha1 }
     factory :admin do
-      admin true
+      admin { true }
     end
   end
 end

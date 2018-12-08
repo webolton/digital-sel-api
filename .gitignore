@@ -24,6 +24,8 @@
 
 # Ignore secrets
 /.env
+/.env.test
+/.env.production
 /config/database.yml
 
 config/settings.local.yml
