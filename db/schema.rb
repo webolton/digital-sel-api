@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_26_220223) do
+ActiveRecord::Schema.define(version: 2018_12_26_221003) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,6 +69,17 @@ ActiveRecord::Schema.define(version: 2018_12_26_220223) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["jti"], name: "index_users_on_jti", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "witnesses", force: :cascade do |t|
+    t.integer "manuscript_id"
+    t.integer "saints_legend_id"
+    t.string "position"
+    t.string "folios"
+    t.text "description"
+    t.text "notes"
+    t.string "incipit"
+    t.string "excipit"
   end
 
 end
