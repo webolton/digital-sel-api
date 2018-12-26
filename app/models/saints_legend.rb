@@ -1,0 +1,2 @@
+class SaintsLegend < ApplicationRecord
+end

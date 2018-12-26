@@ -1,6 +1,12 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
+  factory :witness do
+    
+  end
+  factory :saints_legend do
+    
+  end
   factory :manuscript do
   end
   factory :user do
