@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::API
+  respond_to :json
   rescue_from ActiveRecord::RecordNotFound, with: :resource_not_found
   rescue_from CanCan::AccessDenied, with: :not_permitted_response
   before_action :configure_permitted_parameters, if: :devise_controller?
