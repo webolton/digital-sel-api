@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-server 'ec2-54-224-195-27.compute-1.amazonaws.com', roles: [:app, :web, :db], user: 'deploy'
+server '34.233.109.135', roles: [:app, :web, :db], user: 'deploy'
 set :default_env, {
   path: "/home/deploy/.rvm/gems/ruby-2.4.4/bin:$PATH"
 }
