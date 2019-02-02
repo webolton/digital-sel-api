@@ -53,4 +53,20 @@ I manually created the database, users, and added users.
     sudo chown -R deploy /var/www/digital-sel-api
 
 
+## SSL
+
+In order to get Certbot to run on Amazon Linux, I edited the source code of `certbot-auto` at line 842:
+
+
+    elif grep -i "Amazon Linux" /etc/issue > /dev/null 2>&1 || \
+        grep 'cpe:.*:amazon_linux:2' /etc/os-release > /dev/null 2>&1; then
+
+I was then able to run:
+
+    certbot-auto certonly --standalone -d api.digitalsel.com --debug
+
+cron job to renew the cert:
+
+    0 12 * * 6 sudo /usr/local/bin/certbot-auto renew
+
 
