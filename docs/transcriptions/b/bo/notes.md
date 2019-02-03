@@ -1,3 +1,5 @@
+# B bo notes
+
 0.0, "c xxxii" written in later hand in upper-left margin, "seínt botolf" written in a contemporary hand, centered, above text.
 1.1, Capital "S" descends three lines. Each couplet is connected by a swooping line in the left margin.
 4.11, Originally represented "᷒" as "is". TODO: verify that this is the right spelling.
