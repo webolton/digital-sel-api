@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   root to: 'home#index'
 
   resources :users, only: %i[index create update destroy show]
+  resources :manuscripts, only: %i[index show]
 
   get 'status', to: 'status#index'
 end
