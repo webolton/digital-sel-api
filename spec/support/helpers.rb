@@ -12,4 +12,8 @@ module Helpers
     auth_headers = Devise::JWT::TestHelpers.auth_headers(headers, user)
     auth_headers.each { |key, value| @request.headers[key] = value }
   end
+
+  def response_body
+    JSON.parse(response.body)
+  end
 end
