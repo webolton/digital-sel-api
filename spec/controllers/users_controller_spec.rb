@@ -121,10 +121,10 @@ RSpec.describe UsersController, type: :controller do
     let(:password_confirmation) { password }
     let(:user_params) do
       { user:
-             { first_name:            first_name,
-               last_name:             last_name,
-               email:                 email,
-               password:              password,
+             { first_name: first_name,
+               last_name: last_name,
+               email: email,
+               password: password,
                password_confirmation: password_confirmation } }
     end
 

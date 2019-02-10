@@ -79,7 +79,6 @@ set :keep_releases, 5
 # Default value for :pty is false
 # set :pty, true
 
-
 # Default value for default_env is {}
 # set :default_env, { path: '/opt/ruby/bin:$PATH' }
 

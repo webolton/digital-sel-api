@@ -6,4 +6,4 @@ set :default_env, {
 }
 set :linked_dirs, %w{tmp}
 set :linked_files, %w{config/database.yml .env}
-set :stage,           :production
+set :stage, :production

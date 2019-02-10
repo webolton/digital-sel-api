@@ -8,6 +8,7 @@ class ApplicationController < ActionController::API
 
   def validate_id(id)
     return if id.is_a?(Integer) || /\A[-+]?\d+\z/ === id
+
     render json: { errors: ['Invalid id format'] }, status: 400
   end
 
