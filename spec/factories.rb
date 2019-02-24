@@ -4,9 +4,6 @@ FactoryBot.define do
   factory :witness do
   end
 
-  factory :saints_legend do
-  end
-
   factory :manuscript do
     # "date": null,
     # "description": null,
@@ -25,6 +22,21 @@ FactoryBot.define do
     country { 'UK' }
     city { 'London' }
     repository { 'British Library' }
+  end
+
+  factory :saints_legend do
+    sequence(:siglum) { |n| "b#{n}" }
+    title { "Saint #{Faker::Name.first_name} the confessor that goodman was enoug" }
+    # date nil
+    # summary nil
+    position { rand(1..80) }
+    incipit { "Saint #{Faker::Name.first_name} the confessor that goodman was enoug" }
+    imev_number { "2#{rand(1..999)}" }
+    nimev_number { "2#{rand(1..999)}" }
+    dimev_number { "4#{rand(1..999)}" }
+    # notes nil
+    versification { 'two-line, aa' }
+    calendar_day { Time.now.strftime('%d %B') }
   end
 
   factory :user do
