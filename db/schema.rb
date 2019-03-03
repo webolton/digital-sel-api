@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_02_213942) do
+ActiveRecord::Schema.define(version: 2019_03_03_205514) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,13 +26,14 @@ ActiveRecord::Schema.define(version: 2019_02_02_213942) do
     t.text "dialect"
     t.text "scribal_description"
     t.text "provenance"
-    t.string "url"
+    t.string "catalog_url"
     t.string "sc_number"
     t.text "notes"
     t.string "status"
     t.string "owned"
     t.float "price"
     t.boolean "major_ms"
+    t.string "digital_edition_url"
   end
 
   create_table "saints_legends", force: :cascade do |t|
