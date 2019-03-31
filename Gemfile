@@ -12,7 +12,7 @@ gem 'dotenv-rails', require: 'dotenv/rails-now'
 gem 'pg'
 gem 'puma', '~> 3.11' # app server
 gem 'rack-cors', require: 'rack/cors'
-gem 'rails', '~> 5.2.0'
+gem 'rails', '~> 5.2.3'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'
