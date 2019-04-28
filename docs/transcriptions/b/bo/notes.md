@@ -1,11 +1,6 @@
-# B bo notes
-## Proofread 1, several errors (6 April, 2019)
-## Proofread 2, several errors, from back (14 April, 2019)
-## Proofread 3, a few errors, from back (28 April, 2019)
-
 0.0, [305v] "c xxxıı" written in later hand in upper-left margin, "seínt botolf" written in a contemporary hand, centered, above text.
 1.1, "C xlxıȷ" (???) written in left margin. Capital "S" descends three lines. Each couplet is connected by a swooping line in the left margin.
-9.1 The pilcrows are set in the left margin.
+9.1, The pilcrows are set in the left margin.
 58.11, The word "heþír" looks very much like "heþín."
 51.0, [306r] The Arabic number 306 is written in the upper left margin in a later hand. In the margin, in the corner, another later hand has written, "Really 208 / for no 141 ..." This is very faint in the scan and barely legible.
 60.8, "he myȝt segge as me seyþ ín game." I wonder what "game" the author is talking about here.
