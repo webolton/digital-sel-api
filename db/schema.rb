@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_03_205514) do
+ActiveRecord::Schema.define(version: 2019_04_28_192405) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "manuscript_lines", force: :cascade do |t|
+    t.text "transcribed_line"
+    t.text "html_line"
+    t.string "sel_id"
+    t.string "witness_line_number"
+    t.string "ms_line_number"
+    t.text "notes"
+    t.integer "witness_id"
+  end
 
   create_table "manuscripts", force: :cascade do |t|
     t.string "shelfmark"
