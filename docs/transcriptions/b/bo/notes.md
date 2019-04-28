@@ -5,4 +5,4 @@
 51.0, [306r] The Arabic number 306 is written in the upper left margin in a later hand. In the margin, in the corner, another later hand has written, "Really 208 / for no 141 ..." This is very faint in the scan and barely legible.
 60.8, "he myȝt segge as me seyþ ín game." I wonder what "game" the author is talking about here.
 66.4, "monkís" seems be the spelling of the abreviation "᷒."
-74.13, "Am̅e" is written in the right margin, and surrounded by a double bordered box. In the bottom left corner of the page, a later hand has written as an apparent pen trial "In this book ..." The phrase is not legible and has been crossed out.
+74.13, "Am̅e" is written in the right margin, and surrounded by a double bordered box. In the bottom left corner of the page, a later hand has written as an apparent pen trial "In this book ..." The phrase is not legible and has been crossed out. There is a watermark faintly visible in the middle of the page under the last line. It looks like it may be something like Briquet 2611 or 3944.
