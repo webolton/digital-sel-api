@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
+  factory :manuscript_line do
+    
+  end
+
   factory :witness do
   end
 
