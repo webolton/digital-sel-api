@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_28_192405) do
+ActiveRecord::Schema.define(version: 2019_05_12_142102) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2019_04_28_192405) do
     t.string "ms_line_number"
     t.text "notes"
     t.integer "witness_id"
+    t.boolean "marginal_note", default: false
   end
 
   create_table "manuscripts", force: :cascade do |t|
