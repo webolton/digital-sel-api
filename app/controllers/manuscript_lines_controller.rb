@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class ManuscriptLinesController < ApplicationController
+  include ManuscriptLinesControllerConcern
+
   def create
     ms_siglum = manuscript_line_params['manuscript_line']['ms_siglum']
     legend_siglum = manuscript_line_params['manuscript_line']['saints_legend_siglum']
@@ -18,6 +20,9 @@ class ManuscriptLinesController < ApplicationController
     ).first
     notes = File.readlines(notes_path)
 
+    lines.each_with_index do |line, index|
+      create_line(line, index, witness, dictionary, foliation, notes)
+    end
   end
 
   def manuscript_line_params
