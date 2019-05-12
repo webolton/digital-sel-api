@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :users, only: %i[index create update destroy show]
   resources :manuscripts, only: %i[index show]
   resources :saints_legends, only: %i[index show]
+  resources :manuscript_lines, only: %i[create]
 
   get 'status', to: 'status#index'
 end
