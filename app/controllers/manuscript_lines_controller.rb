@@ -16,9 +16,18 @@ class ManuscriptLinesController < ApplicationController
     lines = File.readlines(transcription_path)
 
     notes_path = Dir.glob(
-      Rails.root.join('docs', 'transcriptions', ms_siglum.downcase, legend_siglum, 'notes.md')
+      Rails.root.join('docs', 'transcriptions', ms_siglum.downcase, legend_siglum, 'notes.json')
     ).first
-    notes = File.readlines(notes_path)
+
+    notes = File.read(notes_path)
+    notes = JSON.parse(notes).with_indifferent_access
+
+    notes.each do |key, value|
+      if key.split('.').last == '0'
+        create_marginal_note(key, value, witness, foliation)
+        notes.delete(key)
+      end
+    end
 
     lines.each_with_index do |line, index|
       create_line(line, index, witness, dictionary, foliation, notes)
