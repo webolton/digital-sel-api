@@ -3,7 +3,19 @@
 module ManuscriptLinesControllerConcern
   extend ActiveSupport::Concern
 
-  def format_line(line, notes = nil)
+  def annotated_line_and_notes(line, line_number, notes, sel_id)
+    words = line.split(' ')
+    notes = notes_for_line(line_number, notes)
+    note_text = []
+    notes.each do |key, val|
+      note_index = key.split('.').last.to_i - 1
+      annotated_word = words[note_index]
+      words[note_index] = "<span class='annotated-word' id='note-#{sel_id}-#{note_index}'>#{annotated_word}</span>"
+      note_text.push(val)
+    end
+    return words.join(' '), note_text.join(' ')
+  end
+
   def format_line(line, ms_line, notes = nil)
     if notes
       "<div id='selid-#{ms_line.witness_line_number}-msid-#{ms_line.ms_line_number}' class=''>#{annotated_line(line, notes)}</div>"
@@ -33,7 +45,11 @@ module ManuscriptLinesControllerConcern
     ms_line.sel_id = "#{witness.manuscript.siglum}-#{witness.saints_legend.siglum}-#{ms_line.witness_line_number}"
     ms_line.marginal_note = true
     ms_line.ms_line_number = create_manuscript_line_number(ms_line.witness_line_number, foliation, true)
-    # ms_line.save
+    if ms_line.save
+      Rails.logger.warn("Saved #{ms_line.sel_id}")
+    else
+      Rails.logger.warn("Failed to save #{ms_line.sel_id}. #{ms_line.errors}")
+    end
   end
 
   def line_note?(line_number, note_keys)
@@ -53,14 +69,20 @@ module ManuscriptLinesControllerConcern
     ms_line.transcribed_line = line
     expanded_line = line
 
+    if line_note?(ms_line.witness_line_number, notes.keys)
+      expanded_line, note_text = annotated_line_and_notes(expanded_line, ms_line.witness_line_number, notes, ms_line.sel_id)
+      ms_line.notes = note_text
+    end
+
     dictionary.to_hash.each do |abbrev|
       expanded_line.gsub!(abbrev[0], abbrev[1])
     end
+    ms_line.html_line = expanded_line
 
-    if line_note?(ms_line.witness_line_number, notes.keys)
-      puts format_line(expanded_line, ms_line, notes_for_line(ms_line.witness_line_number, notes))
+    if ms_line.save
+      Rails.logger.warn("Saved #{ms_line.sel_id}")
     else
-     # format_line(expanded_line, ms_line)
+      Rails.logger.warn("Failed to save #{ms_line.sel_id}. #{ms_line.errors}")
     end
   end
 end
