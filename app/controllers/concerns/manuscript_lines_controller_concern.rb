@@ -26,9 +26,16 @@ module ManuscriptLinesControllerConcern
     end
   end
 
-  def create_marginal_note(note, witness)
+  def create_marginal_note(key, value, witness, foliation)
     ms_line = ManuscriptLine.new
     ms_line.witness = witness
+    ms_line.witness_line_number = key.split('.').first
+    ms_line.sel_id = "#{witness.manuscript.siglum}-#{witness.saints_legend.siglum}-#{ms_line.witness_line_number}"
+    ms_line.marginal_note = true
+    ms_line.ms_line_number = create_manuscript_line_number(ms_line.witness_line_number, foliation, true)
+    # ms_line.save
+  end
+
   def line_note?(line_number, note_keys)
     return true if note_keys.map{ |key| key.split('.').first }.include?(line_number)
   end
