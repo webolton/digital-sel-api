@@ -4,6 +4,14 @@ module ManuscriptLinesControllerConcern
   extend ActiveSupport::Concern
 
   def format_line(line, notes = nil)
+  def format_line(line, ms_line, notes = nil)
+    if notes
+      "<div id='selid-#{ms_line.witness_line_number}-msid-#{ms_line.ms_line_number}' class=''>#{annotated_line(line, notes)}</div>"
+    else
+      "<div id='selid-#{ms_line.witness_line_number}-msid-#{ms_line.ms_line_number}' class=''>#{line}</div>"
+    end
+  end
+
   end
 
   def create_marginal_note(note, witness)
