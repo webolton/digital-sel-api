@@ -9,6 +9,8 @@ module ManuscriptLinesControllerConcern
   def create_marginal_note(note, witness)
     ms_line = ManuscriptLine.new
     ms_line.witness = witness
+  def line_note?(line_number, note_keys)
+    return true if note_keys.map{ |key| key.split('.').first }.include?(line_number)
   end
 
   def create_line(line, index, witness, dictionary, foliation)
