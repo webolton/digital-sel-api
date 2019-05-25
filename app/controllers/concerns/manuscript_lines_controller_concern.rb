@@ -13,12 +13,13 @@ module ManuscriptLinesControllerConcern
       words[note_index] = "<span class='annotated-word' id='note-#{sel_id}-#{note_index}'>#{annotated_word}</span>"
       note_text.push(val)
     end
-    return words.join(' '), note_text.join(' ')
+    [words.join(' '), note_text.join(' ')]
   end
 
   def format_line(line, ms_line, notes = nil)
     if notes
-      "<div id='selid-#{ms_line.witness_line_number}-msid-#{ms_line.ms_line_number}' class=''>#{annotated_line(line, notes)}</div>"
+      "<div id='selid-#{ms_line.witness_line_number}-msid-#{ms_line.ms_line_number}' class=''>" \
+      "#{annotated_line(line, notes)}</div>"
     else
       "<div id='selid-#{ms_line.witness_line_number}-msid-#{ms_line.ms_line_number}' class=''>#{line}</div>"
     end
@@ -29,16 +30,12 @@ module ManuscriptLinesControllerConcern
       range = range_string.split('..').inject{ |st_range, end_range| st_range.to_i..end_range.to_i }
       if range.include?(sel_line_number.to_i)
         folio_line_no = range.find_index(sel_line_number.to_i) + 1
-        if note
-          return "#{folio}-#{folio_line_no}-marginal-note"
-        else
-          return "#{folio}-#{folio_line_no}"
-        end
+        note ? "#{folio}-#{folio_line_no}-marginal-note" : "#{folio}-#{folio_line_no}"
       end
     end
   end
 
-  def create_marginal_note(key, value, witness, foliation)
+  def create_marginal_note(key, _value, witness, foliation)
     ms_line = ManuscriptLine.new
     ms_line.witness = witness
     ms_line.witness_line_number = key.split('.').first
@@ -57,7 +54,7 @@ module ManuscriptLinesControllerConcern
   end
 
   def notes_for_line(line_number, notes)
-    notes.select{ |key, val| key.split('.').first == line_number }
+    notes.select{ |key, _val| key.split('.').first == line_number }
   end
 
   def create_line(line, index, witness, dictionary, foliation, notes)
@@ -70,7 +67,9 @@ module ManuscriptLinesControllerConcern
     expanded_line = line
 
     if line_note?(ms_line.witness_line_number, notes.keys)
-      expanded_line, note_text = annotated_line_and_notes(expanded_line, ms_line.witness_line_number, notes, ms_line.sel_id)
+      expanded_line, note_text = annotated_line_and_notes(
+        expanded_line, ms_line.witness_line_number, notes, ms_line.sel_id
+      )
       ms_line.notes = note_text
     end
 
