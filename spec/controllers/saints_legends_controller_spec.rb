@@ -11,8 +11,6 @@ RSpec.describe SaintsLegendsController, type: :controller do
         create_list(:saints_legend, 5)
       end
 
-      it_behaves_like 'a successful request'
-
       it 'returns the correct number of objects' do
         do_action
         expect(response_body['saints_legends'].length).to eq(5)
