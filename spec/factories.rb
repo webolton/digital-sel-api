@@ -14,6 +14,7 @@ FactoryBot.define do
     notes { 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod' }
     incipit { 'Seint botolf þe holy monk & ek his broþer' }
     explicit { 'þat we to þilke ioyȝe come & so þe deuil schend' }
+    manuscript
   end
 
   factory :manuscript do
