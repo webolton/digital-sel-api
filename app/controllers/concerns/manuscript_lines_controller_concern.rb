@@ -30,7 +30,10 @@ module ManuscriptLinesControllerConcern
       range = range_string.split('..').inject{ |st_range, end_range| st_range.to_i..end_range.to_i }
       if range.include?(sel_line_number.to_i)
         folio_line_no = range.find_index(sel_line_number.to_i) + 1
-        note ? "#{folio}-#{folio_line_no}-marginal-note" : "#{folio}-#{folio_line_no}"
+
+        return "#{folio}-#{folio_line_no}-marginal-note" if note
+
+        return "#{folio}-#{folio_line_no}"
       end
     end
   end
