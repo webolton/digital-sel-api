@@ -9,10 +9,10 @@
     "dictionary": {
       "St̅": "S<i class='expan nasel-expan multi-char-expan'>ein</i>t",
       "botolf": "<span class='personal-name saint botulf-of-thorney'>Botolf</span>",
-      "": ";",
       "͛": "<i class='expan rotic-expan er-expan'>er</i>",
       "ᵉ": "<i class='expan vowel-expan e-expan'>e</i>",
-      "íngelond\D*?\b": "<span class='place-name England'>Íngelond</span>",
+      "íngelond": "<span class='place-name England'>Íngelond</span>",
+      "íngelonde": "<span class='place-name England'>Íngelonde</span>",
       "ſ": "s",
       "᷒": "<i class='expan vowel-expan is-expan'>ís</i>",
       "þᵗ": "þ<i class='expan that-expan'>at</i>",
@@ -28,6 +28,5 @@
       "þᵘ": "þ<i class='expan vowel-expan u-expan'>u</i>",
       "Am̅e": "Ame<i class='expan nasel-expan n-expan'>n</i>"
     }
-
   }
 }
