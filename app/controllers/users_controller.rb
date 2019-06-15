@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     if user.save
       render json: { success: 'User created', user_id: user.id }, status: 201
     else
-      render_errors(user)
+      render_errors(user.errors.values, 422)
     end
   end
 
@@ -29,7 +29,7 @@ class UsersController < ApplicationController
     if @user.update(user_params)
       render json: { user: format_user(@user) }, status: 200
     else
-      render_errors(@user)
+      render_errors(@user.errors.values, 422)
     end
   end
 

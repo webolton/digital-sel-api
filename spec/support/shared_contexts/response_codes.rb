@@ -28,6 +28,13 @@ shared_context 'a bad request' do
   end
 end
 
+shared_context 'an unprocessible entity' do
+  it 'returns a UNPROCESSABLE ENTITY (422) status code' do
+    do_action
+    expect(response.status).to eq(422)
+  end
+end
+
 shared_context 'a request for a missing resource' do |resource_name|
   it 'returns a NOT FOUND (404) status code' do
     do_action

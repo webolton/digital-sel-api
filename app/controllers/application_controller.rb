@@ -12,8 +12,8 @@ class ApplicationController < ActionController::API
     render json: { errors: ['Invalid id format'] }, status: 400
   end
 
-  def render_errors(object)
-    render json: { errors: object.errors.values.flatten }, status: 400
+  def render_errors(errors, status)
+    render json: { errors: errors.flatten }, status: status
   end
 
   def not_permitted_response
