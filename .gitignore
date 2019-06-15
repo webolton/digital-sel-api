@@ -34,3 +34,4 @@ config/environments/*.local.yml
 
 # Ignore db snapshots
 *.sql.gz
+coverage
