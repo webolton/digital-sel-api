@@ -2,6 +2,8 @@
 
 class ManuscriptLinesController < ApplicationController
   include ManuscriptLinesControllerConcern
+  before_action :authenticate_user!
+  authorize_resource
 
   def create
     ms_siglum = manuscript_line_params['manuscript_line']['ms_siglum']
