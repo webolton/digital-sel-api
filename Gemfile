@@ -6,6 +6,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.4.4'
 
 gem 'cancancan', '~> 2.0'
+gem 'coveralls', require: false
 gem 'devise'
 gem 'devise-jwt', '~> 0.5.7'
 gem 'dotenv-rails', require: 'dotenv/rails-now'
