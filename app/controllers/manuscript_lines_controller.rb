@@ -37,6 +37,6 @@ class ManuscriptLinesController < ApplicationController
   end
 
   def manuscript_line_params
-    params.permit(manuscript_line: {})
+    params.require(:manuscript_line).permit(:ms_siglum, :saints_legend_siglum, dictionary: {}, foliation: {})
   end
 end
