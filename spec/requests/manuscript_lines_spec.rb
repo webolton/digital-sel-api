@@ -31,6 +31,32 @@ RSpec.describe 'POST /manuscript_lines', type: :request do
       let(:params) { { manuscript_line: { ms_siglum: 'E' } }.to_json }
       it_behaves_like 'a bad request'
     end
+
+    context 'when all required parameters are sent' do
+      let(:params) do
+        { manuscript_line: {
+          ms_siglum: 'E',
+          saints_legend_siglum: 'bo',
+          foliation: {
+            '1..19' => '161r',
+            '20..62' => '161v',
+            '63..69' => '162r'
+          },
+          dictionary: {
+            Botulf: '<span class=\'personal-name saint botulf-of-thorney\'>Botulf</span>',
+            botulf: '<span class=\'personal-name saint botulf-of-thorney\'>Botulf</span>'
+          }
+        } }.to_json
+      end
+
+      context 'when a witness cannot be found' do
+        it_behaves_like 'a not found request'
+        it 'returns the correct error' do
+          do_action
+          expect(response_body['errors'].first).to eq('Witness not found for MS: E and Legend: bo')
+        end
+      end
+    end
   end
 
 end

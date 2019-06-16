@@ -35,6 +35,13 @@ shared_context 'an unprocessible entity' do
   end
 end
 
+shared_context 'a not found request' do # custom message for 404
+  it 'returns a NOT FOUND (404) status code' do
+    do_action
+    expect(response.status).to eq(404)
+  end
+end
+
 shared_context 'a request for a missing resource' do |resource_name|
   it 'returns a NOT FOUND (404) status code' do
     do_action

@@ -18,6 +18,11 @@ class ManuscriptLinesController < ApplicationController
 
     witness = Witness.for_ms_and_siglum(ms_siglum, legend_siglum)
 
+    unless witness
+      render_errors(["Witness not found for MS: #{ms_siglum} and Legend: #{legend_siglum}"], 404)
+      return
+    end
+
     transcription_path = Dir.glob(
       Rails.root.join('docs', 'transcriptions', ms_siglum.downcase, legend_siglum, '*.seltxt')
     ).first
