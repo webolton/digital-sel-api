@@ -23,22 +23,9 @@ class ManuscriptLinesController < ApplicationController
       return
     end
 
-    transcription_path = Dir.glob(
-      Rails.root.join('docs', 'transcriptions', ms_siglum.downcase, legend_siglum, '*.seltxt')
-    ).first
-    lines = File.readlines(transcription_path)
+    lines = read_file(ms_siglum, legend_siglum, false)
 
-    notes_path = Dir.glob(
-      Rails.root.join('docs', 'transcriptions', ms_siglum.downcase, legend_siglum, 'notes.json')
-    ).first
-
-    notes = File.read(notes_path)
-    notes = JSON.parse(notes).with_indifferent_access
-
-    notes.each do |key, value|
-      if key.split('.').last == '0'
-        create_marginal_note(key, value, witness, foliation)
-        notes.delete(key)
+    notes = read_file(ms_siglum, legend_siglum, true)
       end
     end
 

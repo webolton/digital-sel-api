@@ -3,6 +3,26 @@
 module ManuscriptLinesControllerConcern
   extend ActiveSupport::Concern
 
+  def read_file(ms_siglum, legend_siglum, notes)
+    exten = notes ? 'notes.json' : '*.seltxt'
+    path = if Rails.env.test?
+             Dir.glob(
+               Rails.root.join('spec', 'fixtures', 'files', 'docs', 'transcriptions', ms_siglum.downcase,
+                               legend_siglum, exten)
+             ).first
+           else
+             Dir.glob(
+               Rails.root.join('docs', 'transcriptions', ms_siglum.downcase, legend_siglum, exten)
+             ).first
+           end
+    if notes
+      notes_text = File.read(path)
+      JSON.parse(notes_text).with_indifferent_access
+    else
+      File.readlines(path)
+    end
+  end
+
   def annotated_line_and_notes(line, line_number, notes, sel_id)
     words = line.split(' ')
     notes = notes_for_line(line_number, notes)
