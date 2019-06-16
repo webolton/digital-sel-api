@@ -6,6 +6,9 @@
 
 <p>
   <img alt="Travis (.com)" src="https://img.shields.io/travis/com/webolton/digital-sel-api.svg">
+  <a href='https://coveralls.io/github/webolton/digital-sel-api?branch=master'>
+    <img src='https://coveralls.io/repos/github/webolton/digital-sel-api/badge.svg?branch=master' alt='Coverage Status' />
+  </a>
 </p>
 
 The Digital SEL API the [Rails](https://rubyonrails.org/) backend of the Digital SEL, a digital
