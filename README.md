@@ -4,7 +4,7 @@
 >
 > Þat to is kind eritage . mankunne schal bringe
 
-<p align="center">
+<p>
   <img alt="Travis (.com)" src="https://img.shields.io/travis/com/webolton/digital-sel-api.svg">
 </p>
 
