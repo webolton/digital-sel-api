@@ -26,11 +26,21 @@ class ManuscriptLinesController < ApplicationController
     lines = read_file(ms_siglum, legend_siglum, false)
 
     notes = read_file(ms_siglum, legend_siglum, true)
-      end
-    end
 
-    lines.each_with_index do |line, index|
-      create_line(line, index, witness, dictionary, foliation, notes)
+    begin
+      notes.each do |key, value|
+        if key.split('.').last == '0'
+          create_marginal_note(key, value, witness, foliation)
+          notes.delete(key)
+        end
+      end
+
+      lines.each_with_index do |line, index|
+        create_line(line, index, witness, dictionary, foliation, notes)
+      end
+      render json: { success: 'Manuscript Lines successfully imported' }, status: 201
+    rescue StandardError => e
+      render_errors(["Something went wrong: #{e}"], 500)
     end
   end
 
