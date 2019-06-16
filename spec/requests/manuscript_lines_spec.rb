@@ -56,6 +56,14 @@ RSpec.describe 'POST /manuscript_lines', type: :request do
           expect(response_body['errors'].first).to eq('Witness not found for MS: E and Legend: bo')
         end
       end
+
+      context 'when a witness can be found' do
+        let!(:manuscript) { create(:manuscript, siglum: 'E') }
+        let!(:saints_legend) { create(:saints_legend, siglum: 'bo') }
+        let!(:witness) { create(:witness, saints_legend: saints_legend, manuscript: manuscript) }
+
+        it_behaves_like 'a successfully created request'
+      end
     end
   end
 
