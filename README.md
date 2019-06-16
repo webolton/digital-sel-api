@@ -4,6 +4,10 @@
 >
 > Þat to is kind eritage . mankunne schal bringe
 
+<p align="center">
+  <img alt="Travis (.com)" src="https://img.shields.io/travis/com/webolton/digital-sel-api.svg">
+</p>
+
 The Digital SEL API the [Rails](https://rubyonrails.org/) backend of the Digital SEL, a digital
 humanities project whose aim is to provide a sophisticated, interactive digital edition of the
 [South English Legendary](https://en.wikipedia.org/wiki/South_English_Legendary), an important
