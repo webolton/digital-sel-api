@@ -3,7 +3,6 @@
 require 'rails_helper'
 
 RSpec.describe ManuscriptsController, type: :controller do
-
   describe '#index' do
     subject(:do_action) { get :index }
 
@@ -21,7 +20,7 @@ RSpec.describe ManuscriptsController, type: :controller do
         response_body['manuscripts'].map do |ms|
           expect(ms.keys).to match_array(
             %w[id shelfmark siglum country city repository date description dialect scribal_description
-               provenance sc_number notes status owned price major_ms catalog_url digital_edition_url]
+               provenance sc_number notes status owned price major_ms catalog_url digital_edition_url witnesses]
           )
         end
       end
