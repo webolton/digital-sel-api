@@ -38,7 +38,7 @@ class ManuscriptLinesController < ApplicationController
       lines.each_with_index do |line, index|
         create_line(line, index, witness, dictionary, foliation, notes)
       end
-      render json: { success: 'Manuscript Lines successfully imported' }, status: 201
+      render json: { success: 'Manuscript Lines successfully imported' }, status: :created
     rescue StandardError => e
       render_errors(["Something went wrong: #{e}"], 500)
     end

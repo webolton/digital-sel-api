@@ -4,7 +4,6 @@ require 'rails_helper'
 require 'devise/jwt/test_helpers'
 
 RSpec.describe UsersController, type: :controller do
-
   describe '#index' do
     subject(:do_action) { get :index }
     let(:users) { create_list(:user, 4) }
@@ -22,7 +21,7 @@ RSpec.describe UsersController, type: :controller do
 
       it 'returns all the users' do
         do_action
-        expect(parsed_body['users'].map{ |user| user['email'] }).to include(*User.all.map(&:email))
+        expect(parsed_body['users'].map { |user| user['email'] }).to include(*User.all.map(&:email))
       end
 
       it 'returns a user in the right format' do
@@ -162,7 +161,7 @@ RSpec.describe UsersController, type: :controller do
       it_behaves_like 'a forbidden request'
 
       it 'does not create a new user' do
-        expect{ do_action }.not_to(change { User.count })
+        expect { do_action }.not_to(change { User.count })
       end
     end
   end

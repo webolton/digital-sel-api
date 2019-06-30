@@ -10,7 +10,7 @@ class ApplicationController < ActionController::API
   def validate_id(id)
     return if id.is_a?(Integer) || /\A[-+]?\d+\z/ === id
 
-    render json: { errors: ['Invalid id format'] }, status: 400
+    render json: { errors: ['Invalid id format'] }, status: :bad_request
   end
 
   def parameter_missing(error)
@@ -22,16 +22,16 @@ class ApplicationController < ActionController::API
   end
 
   def not_permitted_response
-    render json: { errors: ['Unpermitted action'] }, status: 403
+    render json: { errors: ['Unpermitted action'] }, status: :forbidden
   end
 
   def resource_not_found(error)
     error_source = error.is_a?(String) ? error : error.model
-    render json: { errors: ["#{error_source} not found"] }, status: 404
+    render json: { errors: ["#{error_source} not found"] }, status: :not_found
   end
 
   def internal_server_error(error_msg = '')
-    render json: { errors: ['Unexpected server error', error_msg].reject(&:empty?) }, status: 500
+    render json: { errors: ['Unexpected server error', error_msg].reject(&:empty?) }, status: :internal_server_error
     Rails.logger(error_msg)
   end
 

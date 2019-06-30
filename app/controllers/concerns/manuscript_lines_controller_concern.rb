@@ -47,7 +47,7 @@ module ManuscriptLinesControllerConcern
 
   def create_manuscript_line_number(sel_line_number, foliation, note = false)
     foliation.each do |range_string, folio|
-      range = range_string.split('..').inject{ |st_range, end_range| st_range.to_i..end_range.to_i }
+      range = range_string.split('..').inject { |st_range, end_range| st_range.to_i..end_range.to_i }
       if range.include?(sel_line_number.to_i) # rubocop:disable Style/Next
         folio_line_no = range.find_index(sel_line_number.to_i) + 1
 
@@ -73,11 +73,11 @@ module ManuscriptLinesControllerConcern
   end
 
   def line_note?(line_number, note_keys)
-    return true if note_keys.map{ |key| key.split('.').first }.include?(line_number)
+    return true if note_keys.map { |key| key.split('.').first }.include?(line_number)
   end
 
   def notes_for_line(line_number, notes)
-    notes.select{ |key, _val| key.split('.').first == line_number }
+    notes.select { |key, _val| key.split('.').first == line_number }
   end
 
   def create_line(line, index, witness, dictionary, foliation, notes)

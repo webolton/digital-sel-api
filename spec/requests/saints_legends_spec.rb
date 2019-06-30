@@ -12,7 +12,6 @@ RSpec.describe 'GET /saints_legends', type: :request do
   end
 
   context 'when there more than one saints\' legends' do
-
     it_behaves_like 'a successful request'
 
     it 'returns the correct number of legends' do

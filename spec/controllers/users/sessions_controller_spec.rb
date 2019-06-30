@@ -5,7 +5,6 @@ require 'securerandom'
 require 'devise/jwt/test_helpers'
 
 RSpec.describe Users::SessionsController do
-
   before(:each) do
     request.env['devise.mapping'] = Devise.mappings[:user]
     User.destroy_all

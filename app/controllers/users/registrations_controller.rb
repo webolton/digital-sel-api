@@ -7,9 +7,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
     build_resource(sign_up_params)
 
     if resource.save
-      render json: { success: format_user(resource) }, status: 200
+      render json: { success: format_user(resource) }, status: :ok
     else
-      render json: { errors: resource.errors }, status: 400
+      render json: { errors: resource.errors }, status: :bad_request
     end
   end
 

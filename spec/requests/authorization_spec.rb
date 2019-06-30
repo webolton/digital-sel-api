@@ -10,7 +10,6 @@ RSpec.describe 'POST /users/sign_in', type: :request do
   let(:params) { { user: { email: user.email, password: user.password } } }
 
   context 'when params are correct' do
-
     it_behaves_like 'a successful request'
 
     it 'returns JTW token in authorization header' do

@@ -4,7 +4,6 @@ require 'rails_helper'
 require 'securerandom'
 
 RSpec.describe Users::RegistrationsController do
-
   before(:each) do
     request.env['devise.mapping'] = Devise.mappings[:user]
     User.destroy_all

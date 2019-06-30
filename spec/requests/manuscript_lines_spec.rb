@@ -65,11 +65,11 @@ RSpec.describe 'POST /manuscript_lines', type: :request do
         it_behaves_like 'a successfully created request'
 
         it 'creates the right number of lines' do
-          expect{ do_action }.to change{ ManuscriptLine.count }.from(0).to(69)
+          expect { do_action }.to change { ManuscriptLine.count }.from(0).to(69)
         end
 
         it 'creates the right number of annotated lines' do
-          expect{ do_action }.to change{ ManuscriptLine.where.not(notes: nil).count }.from(0).to(5)
+          expect { do_action }.to change { ManuscriptLine.where.not(notes: nil).count }.from(0).to(5)
         end
       end
     end
