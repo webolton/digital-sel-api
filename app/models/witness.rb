@@ -8,7 +8,7 @@ class Witness < ApplicationRecord
   validates :saints_legend, presence: true
   validates :manuscript, presence: true
 
-  attr_reader :ms_siglum
+  attr_reader :ms_siglum, :sl_siglum
 
   def self.for_ms_and_siglum(ms_id_or_siglum, siglum)
     if ms_id_or_siglum.is_a?(Integer)
@@ -21,5 +21,9 @@ class Witness < ApplicationRecord
 
   def ms_siglum
     manuscript.siglum
+  end
+
+  def sl_siglum
+    saints_legend.siglum
   end
 end
