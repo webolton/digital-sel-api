@@ -6,7 +6,7 @@ class ManuscriptsController < ApplicationController
     @manuscripts = Manuscript.all.includes(:witnesses)
                              .as_json(except: %(created_at updated_at),
                                       include: [witnesses: { except: %i[created_at updated_at],
-                                                             methods: :sl_siglum }])
+                                                             methods: %i[sl_siglum title]}])
     render json: { manuscripts: @manuscripts }
   end
 end
