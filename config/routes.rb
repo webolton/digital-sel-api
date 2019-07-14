@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :manuscripts, only: %i[index show]
   resources :saints_legends, only: %i[index show]
   resources :manuscript_lines, only: %i[create]
+  resources :witnesses, only: :index
 
   get 'status', to: 'status#index'
 end
