@@ -1,3 +1,4 @@
+require: rubocop-rails
 AllCops:
   Exclude:
     - "db/schema.rb" # You can't touch this

@@ -1,0 +1,32 @@
+{
+  "manuscript_line": {
+    "ms_siglum": "B",
+    "saints_legend_siglum": "bo",
+    "foliation": {
+      "1..50": "305v",
+      "51..74": "306r"
+    },
+    "dictionary": {
+      "St̅": "S<i class='expan nasel-expan multi-char-expan'>ein</i>t",
+      "botolf": "<span class='personal-name saint botulf-of-thorney'>Botolf</span>",
+      "͛": "<i class='expan rotic-expan er-expan'>er</i>",
+      "ᵉ": "<i class='expan vowel-expan e-expan'>e</i>",
+      "íngelond": "<span class='place-name England'>Íngelond</span>",
+      "íngelonde": "<span class='place-name England'>Íngelonde</span>",
+      "ſ": "s",
+      "᷒": "<i class='expan vowel-expan is-expan'>ís</i>",
+      "þᵗ": "þ<i class='expan that-expan'>at</i>",
+      "adolf": "<span class='personal-name adolf-of-icanho'>Adolf</span>",
+      "aþelmound": "<span class='personal-name æþelmund-annas-sister>Aþelmound</span>",
+      "sywas": "<span class='personal-name queen-sæwara>Sywas</span>",
+      "ᷓ": "<i expan rotic-expan ra-expan>ra</i>",
+      "n̅": "n<i class='expan nasel-expan n-expan'>n</i>",
+      "e̅": "e<i class='expan nasel-expan n-expan'>n</i>",
+      "wᵗ": "w<i class='expan with-expan'>ith</i>",
+      "y̅": "y<i class='expan nasel-expan m-expan'>m</i>",
+      "u̅": "u<i class='expan nasel-expan n-expan'>n</i>",
+      "þᵘ": "þ<i class='expan vowel-expan u-expan'>u</i>",
+      "Am̅e": "Ame<i class='expan nasel-expan n-expan'>n</i>"
+    }
+  }
+}

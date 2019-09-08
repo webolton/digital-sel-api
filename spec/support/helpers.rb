@@ -7,9 +7,13 @@ module Helpers
     JSON.parse(response.body)
   end
 
-  def jwt_sign_in(user)
+  def test_auth_headers(user)
     headers = { 'Accept' => 'application/json', 'Content-Type' => 'application/json' }
-    auth_headers = Devise::JWT::TestHelpers.auth_headers(headers, user)
+    Devise::JWT::TestHelpers.auth_headers(headers, user)
+  end
+
+  def jwt_sign_in(user)
+    auth_headers = test_auth_headers(user)
     auth_headers.each { |key, value| @request.headers[key] = value }
   end
 

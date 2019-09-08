@@ -3,6 +3,7 @@
 class ApplicationController < ActionController::API
   respond_to :json
   rescue_from ActiveRecord::RecordNotFound, with: :resource_not_found
+  rescue_from ActionController::ParameterMissing, with: :parameter_missing
   rescue_from CanCan::AccessDenied, with: :not_permitted_response
   before_action :configure_permitted_parameters, if: :devise_controller?
 
@@ -12,8 +13,12 @@ class ApplicationController < ActionController::API
     render json: { errors: ['Invalid id format'] }, status: 400
   end
 
-  def render_errors(object)
-    render json: { errors: object.errors.values.flatten }, status: 400
+  def parameter_missing(error)
+    render_errors([error.message], 400)
+  end
+
+  def render_errors(errors, status)
+    render json: { errors: errors.flatten }, status: status
   end
 
   def not_permitted_response

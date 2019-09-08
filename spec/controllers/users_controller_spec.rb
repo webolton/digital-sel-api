@@ -146,7 +146,7 @@ RSpec.describe UsersController, type: :controller do
         let(:email) { 'ke$ha' }
         let(:first_name) { '' }
 
-        it_behaves_like 'a bad request'
+        it_behaves_like 'an unprocessible entity'
 
         it 'returns the correct errors' do
           do_action

@@ -6,6 +6,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.4.4'
 
 gem 'cancancan', '~> 2.0'
+gem 'coveralls', require: false
 gem 'devise'
 gem 'devise-jwt', '~> 0.5.7'
 gem 'dotenv-rails', require: 'dotenv/rails-now'
@@ -33,11 +34,16 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
 
+group :test do
+  gem 'simplecov', require: false
+end
+
 group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'pry'
   gem 'rspec-rails'
+  gem 'rubocop-rails'
   gem 'rubocop-rails_config'
   gem 'rubocop-rspec'
 end

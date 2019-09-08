@@ -1,7 +1,20 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
+  factory :manuscript_line do
+  end
+
   factory :witness do
+    position { rand(1..50).to_s }
+    folios { "#{rand(1..9)}r-#{rand(9..30)}v" }
+    description do
+      'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod \
+                 tempor incididunt ut labore et dolore magna aliqua'
+    end
+    notes { 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod' }
+    incipit { 'Seint botolf þe holy monk & ek his broþer' }
+    explicit { 'þat we to þilke ioyȝe come & so þe deuil schend' }
+    manuscript
   end
 
   factory :manuscript do
@@ -36,7 +49,7 @@ FactoryBot.define do
     dimev_number { "4#{rand(1..999)}" }
     # notes nil
     versification { 'two-line, aa' }
-    calendar_day { Time.now.strftime('%d %B') }
+    calendar_day { Time.zone.now.strftime('%d %B') }
   end
 
   factory :user do
