@@ -43,16 +43,6 @@ namespace :puma do
 end
 
 namespace :deploy do
-  # desc "Make sure local git is in sync with remote."
-  # task :check_revision do
-  #   on roles(:app) do
-  #     unless `git rev-parse HEAD` == `git rev-parse origin/#{fetch(:branch)}`
-  #       puts "WARNING: HEAD is not the same as origin/#{fetch(:branch)}"
-  #       puts "Run `git push` to sync changes."
-  #       exit
-  #     end
-  #   end
-  # end
   desc 'Initial Deploy'
   task :initial do
     on roles(:app) do
@@ -60,7 +50,19 @@ namespace :deploy do
     end
   end
 
-  # before :starting,     :check_revision
+  set :branch do
+    default_tag = `git tag`.split("\n").last
+
+    ask(:release_tag, "#{default_tag}", echo: true)
+    user_tag = fetch(:release_tag)
+
+    if user_tag == default_tag
+      default_tag
+    else
+      user_tag
+    end
+  end
+
   after  :finishing,    :cleanup
   after  :finishing,    :restart
 end
