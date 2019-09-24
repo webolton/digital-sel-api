@@ -6,7 +6,7 @@ set :rvm_ruby_version, '2.4.4'
 
 set :application, 'digital-sel-api'
 
-set :repo_url, 'git@github.com:webolton/digital-sel-api.git'
+set :repo_url, 'git@github.com:digital-sel/digital-sel-api.git'
 
 set :deploy_to, '/var/www/digital-sel-api'
 
