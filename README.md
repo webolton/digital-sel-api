@@ -25,7 +25,9 @@ For more information about the project see the
 If you are new to development and need help, please feel free to reach out to me via Twitter
 [@william_ellet](https://twitter.com/william_ellet).
 
-## Prerequisites
+## Development
+
+### Prerequisites
 
 - [RVM](https://rvm.io/)
 - Ruby 2.4.4
@@ -34,7 +36,7 @@ If you are new to development and need help, please feel free to reach out to me
 
 If you are not sure about how to install the prerequisites, follow this guide.
 
-## Setup the project for development
+### Setup the project for development
 
 After you have your database server running, create and migrate the database:
 
@@ -46,15 +48,15 @@ Run the server:
 
     rails s
 
-## Run the tests
+### Run the tests
 
     rspec
 
-## Run the linter
+### Run the linter
 
     rubocop
 
-## Database Maintenance
+### Database Maintenance
 
 Though database state is not important to the software, it is very important to the project.
 
@@ -71,3 +73,9 @@ or copy and paste
 Restore a snapshot of the database:
 
     gunzip -c $FILENAME | psql dsel_development
+
+### API Specs / Postman
+
+A maintianed Postman collection of the API may be found in `/postman`. Set the environment variable
+`base_url` to `https://api.digitalsel.com` to use the collection against production.
+

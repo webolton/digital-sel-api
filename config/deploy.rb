@@ -53,7 +53,7 @@ namespace :deploy do
   set :branch do
     default_tag = `git tag`.split("\n").last
 
-    ask(:release_tag, "#{default_tag}", echo: true)
+    ask(:release_tag, default_tag.to_s, echo: true)
     user_tag = fetch(:release_tag)
 
     if user_tag == default_tag

@@ -1,0 +1,120 @@
+{
+	"info": {
+		"_postman_id": "0044a20b-487a-42ae-9671-aec4b61c0465",
+		"name": "digital-sel-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "users_controller",
+			"item": [
+				{
+					"name": "sign_in_user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "fa99ec48-0459-4840-ad6b-a07e4372d207",
+								"exec": [
+									"{",
+									"    \"email\": \"test1@email.com\",",
+									"    \"password\": \"password2\"",
+									"    }"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"user\": {\n    \"email\": \"wbolton@asu.edu\",\n    \"password\": \"###\"\n    }\n}"
+						},
+						"url": "{{base_url}}/users/sign_in"
+					},
+					"response": []
+				},
+				{
+					"name": "sign_out_user",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": "{{base_url}}/users/sign_out"
+					},
+					"response": []
+				},
+				{
+					"name": "show_user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI0ODcyY2Q1Mi0xMTlhLTQ2Y2YtYTdiYS0xYTZjNjY4OWMxMWMiLCJzdWIiOiIxIiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNTM1MzA1MDAyLCJleHAiOjE1MzUzOTE0MDJ9.EviytBjIW3HxubwriJtyLE596PywxOG4L0QbGLMJRCw"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{base_url}}/users/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "manuscripts_controller",
+			"item": [
+				{
+					"name": "get_manuscripts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{base_url}}/manuscripts"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "manuscript_lines_controller",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJhZWY1YjkzOC1iZTk3LTRjNzktOTgzMi1iYTVmYjE2M2M1Y2YiLCJzdWIiOiIxIiwic2NwIjoidXNlciIsImF1ZCI6bnVsbCwiaWF0IjoxNTYwNjMzMjgyLCJleHAiOjE1NjA3MTk2ODJ9._Sh5GXOSywswrBCF4dg65BnpYZoFahkiqpPtxoA5A24"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"manuscript_line\": {\n    \"ms_siglum\": \"E\",\n    \"saints_legend_siglum\": \"bo\",\n    \"foliation\": {\n      \"1..19\": \"161r\",\n      \"20..62\": \"161v\",\n      \"63..69\": \"162r\"\n    },\n    \"dictionary\": {\n      \"Botulf\": \"<span class='personal-name saint botulf-of-thorney'>Botulf</span>\",\n      \"botulf\": \"<span class='personal-name saint botulf-of-thorney'>Botulf</span>\",\n      \"͛\": \"<i class='expan rotic-expan er-expan'>er</i>\",\n      \"ᵉ\": \"<i class='expan vowel-expan e-expan'>e</i>\",\n      \"engelond\": \"<span class='place-name England'>Engelond</span>\",\n      \"engelonde\": \"<span class='place-name England'>Engelond</span>\",\n      \"ſ\": \"s\",\n      \"þᵗ\": \"þ<i class='expan that-expan'>at</i>\",\n      \"Þᵗ\": \"þ<i class='expan that-expan'>at</i>\",\n      \"Adulf\": \"<span class='personal-name adolf-of-icanho'>Adulf</span>\",\n      \"adulf\": \"<span class='personal-name adolf-of-icanho'>Adulf</span>\",\n      \"aþelwolde\": \"<span class='personal-name æþelmund-annas-sister>Aþelwolde</span>\",\n      \"sware\": \"<span class='personal-name queen-sæwara>Sware</span>\", // look for the regular 's' after conversion\n      \"ᷓ\": \"<i expan rotic-expan ra-expan>ra</i>\",\n      \"e̅\": \"e<i class='expan nasel-expan n-expan'>n</i>\",\n      \"o̅\": \"o<i class='expan nasel-expan n-expan'>n</i>\",\n      \"ı̅\": \"i<i class='expan nasel-expan n-expan'>m</i>\",\n      \"wᵗ\": \"w<i class='expan with-expan'>ith</i>\"\n    }\n  }\n}"
+						},
+						"url": "{{base_url}}/manuscript_lines"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
