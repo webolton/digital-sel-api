@@ -1,6 +1,10 @@
 authorities:
   saint_names: 'Oxford Dictionary of Saints with place name if available'
 person_names:
-  a: ['Adolf of Icanho', 'Æthelmund, sister of King Anna']
+  a: ['Adolf of Icanho',
+      'Andrew the Apostle',
+      'Æthelmund, sister of King Anna']
   b: ['Botulf of Thorney']
+  c: ['Jesus Christ']
+  j: ['Jesus Christ']
   s: ['Queen Sæwara']

@@ -4,27 +4,23 @@
     "saints_legend_siglum": "pr",
     "foliation": {
       "1..26": "41r",
-      "26..XX": "41v"
+      "27..67": "41v"
     },
     "dictionary": {
-      "Botulf": "<span class='personal-name saint botulf-of-thorney'>Botulf</span>",
-      "botulf": "<span class='personal-name saint botulf-of-thorney'>Botulf</span>",
+      "Andreu": "<span class='personal-name apostle-the-andrew'>Andreu</span>",
+      "þᵗ": "þ<i class='expan that-expan'>at</i>",
+      "Þᵗ": "Þ<i class='expan that-expan'>at</i>",
+      "manku̅ne": "manku<i class='expan nasel-expan n-expan'>n</i>ne",
       "͛": "<i class='expan rotic-expan er-expan'>er</i>",
       "ᵉ": "<i class='expan vowel-expan e-expan'>e</i>",
-      "engelond": "<span class='place-name England'>Engelond</span>",
-      "engelonde": "<span class='place-name England'>Engelond</span>",
       "ſ": "s",
-      "þᵗ": "þ<i class='expan that-expan'>at</i>",
-      "Þᵗ": "þ<i class='expan that-expan'>at</i>",
-      "Adulf": "<span class='personal-name adolf-of-icanho'>Adulf</span>",
-      "adulf": "<span class='personal-name adolf-of-icanho'>Adulf</span>",
-      "aþelwolde": "<span class='personal-name æþelmund-annas-sister>Aþelwolde</span>",
-      "sware": "<span class='personal-name queen-sæwara>Sware</span>", // look for the regular 's' after conversion
       "ᷓ": "<i expan rotic-expan ra-expan>ra</i>",
-      "e̅": "e<i class='expan nasel-expan n-expan'>n</i>",
-      "o̅": "o<i class='expan nasel-expan n-expan'>n</i>",
+      "ıhu̅": "<span class='personal-name jesus-christ'>ı<i>e</i>h<i>s</i>u</span>",
       "ı̅": "i<i class='expan nasel-expan n-expan'>m</i>",
-      "wᵗ": "w<i class='expan with-expan'>ith</i>"
+      "e̅": "e<i class='expan nasel-expan n-expan'>m</i>",
+      "a̅": "a<i class='expan nasel-expan n-expan'>n</i>",
+      "ᷓ": "<i expan rotic-expan ra-expan>ra</i>",
+      "q̅c": "q<i expan lexime-expan>ui</i>c"
     }
   }
 }
