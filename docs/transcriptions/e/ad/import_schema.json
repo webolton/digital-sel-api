@@ -6,7 +6,8 @@
       "1..44": "42r",
       "45..88": "42v",
       "89..131": "43r",
-      "132...": "43r"
+      "132..175": "43v",
+      "176..": "44r"
     },
     "dictionary": {
       "Botulf": "<span class='personal-name saint botulf-of-thorney'>Botulf</span>",
