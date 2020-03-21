@@ -3,13 +3,14 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.4.4'
+ruby '2.5.7'
 
 gem 'cancancan', '~> 2.0'
 gem 'coveralls', require: false
 gem 'devise'
-gem 'devise-jwt', '~> 0.5.7'
+gem 'devise-jwt', '~> 0.5.9'
 gem 'dotenv-rails', require: 'dotenv/rails-now'
+gem 'dry-configurable', '0.9.0' # pin version because later version conflicts with devise-jwt
 gem 'pg'
 gem 'puma', '~> 3.12' # app server
 gem 'rack-cors', require: 'rack/cors'
