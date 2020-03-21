@@ -1,6 +1,21 @@
 authorities:
   saint_names: 'Oxford Dictionary of Saints with place name if available'
 person_names:
-  a: ['Adolf of Icanho', 'Æthelmund, sister of King Anna']
+  a: ['Adolf of Icanho',
+      'Andrew the Apostle and Martyr',
+      'Æthelmund, sister of King Anna']
   b: ['Botulf of Thorney']
+  c: ['Jesus Christ']
+  e: ['Egeas Proconsul']
+  j: ['Jesus Christ']
+  m: ['Maxille, Wife of Egeus Proconsul']
+  p: ['Peter the Apostle']
   s: ['Queen Sæwara']
+place_names:
+  c: ['Constantinople',
+      'Christendom']
+  e: ['England']
+  p: ['Patras, Greece']
+proper_names:
+  j: ['Jews']
+

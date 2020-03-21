@@ -1,0 +1,26 @@
+{
+  "manuscript_line": {
+    "ms_siglum": "E",
+    "saints_legend_siglum": "pr",
+    "foliation": {
+      "1..26": "41r",
+      "27..67": "41v"
+    },
+    "dictionary": {
+      "Andreu": "<span class='personal-name apostle-the-andrew'>Andreu</span>",
+      "þᵗ": "þ<i class='expan that-expan'>at</i>",
+      "Þᵗ": "Þ<i class='expan that-expan'>at</i>",
+      "manku̅ne": "manku<i class='expan nasel-expan n-expan'>n</i>ne",
+      "͛": "<i class='expan rotic-expan er-expan'>er</i>",
+      "ᵉ": "<i class='expan vowel-expan e-expan'>e</i>",
+      "ſ": "s",
+      "ᷓ": "<i expan rotic-expan ra-expan>ra</i>",
+      "ıhu̅": "<span class='personal-name jesus-christ'>ı<i>e</i>h<i>s</i>u</span>",
+      "ı̅": "i<i class='expan nasel-expan n-expan'>m</i>",
+      "e̅": "e<i class='expan nasel-expan n-expan'>m</i>",
+      "a̅": "a<i class='expan nasel-expan n-expan'>n</i>",
+      "ᷓ": "<i expan rotic-expan ra-expan>ra</i>",
+      "q̅c": "q<i expan lexime-expan>ui</i>c"
+    }
+  }
+}
