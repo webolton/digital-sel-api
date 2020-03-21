@@ -11,7 +11,7 @@ gem 'devise'
 gem 'devise-jwt', '~> 0.5.7'
 gem 'dotenv-rails', require: 'dotenv/rails-now'
 gem 'pg'
-gem 'puma', '~> 3.11' # app server
+gem 'puma', '~> 3.12' # app server
 gem 'rack-cors', require: 'rack/cors'
 gem 'rails', '~> 5.2.3'
 
