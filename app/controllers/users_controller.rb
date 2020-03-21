@@ -3,7 +3,9 @@
 class UsersController < ApplicationController
   include UsersControllerConcern
   before_action :authenticate_user!
-  before_action only: [:show] { validate_id(params[:id]) }
+  before_action only: [:show] do
+    validate_id(params[:id])
+  end
   load_and_authorize_resource
 
   def index

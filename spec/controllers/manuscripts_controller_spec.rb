@@ -20,8 +20,7 @@ RSpec.describe ManuscriptsController, type: :controller do
         do_action
         response_body['manuscripts'].map do |ms|
           expect(ms.keys).to match_array(
-            %w[id shelfmark siglum country city repository date description dialect scribal_description
-               provenance sc_number notes status owned price major_ms catalog_url digital_edition_url]
+            %w[date_range id shelfmark siglum status witness_count]
           )
         end
       end

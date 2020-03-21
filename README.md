@@ -38,6 +38,22 @@ If you are not sure about how to install the prerequisites, follow this guide.
 
 ### Setup the project for development
 
+Set the appropriate environment variables:
+
+```bash
+cp .env.example .env
+```
+
+In development, the relavant variables to set are `DSEL_DB`, `DEVISE_JWT_SECRET_KEY`, and `RAILS_MASTER_KEY`. The values can be arbitrary, but to use the development database snapshot, set `DSEL_DB` to `dsel_development`.
+
+## Install the appropriate prerequsites and libraries
+
+If you do not have Ruby 2.4.4 apparent in `rvm list`, do `rvm install 2.4.4`.
+
+Then do `gem install bundler`.
+
+Next, do `bundle install`.
+
 After you have your database server running, create and migrate the database:
 
     rails db:create
