@@ -1,0 +1,51 @@
+{
+  "manuscript_line": {
+    "ms_siglum": "E",
+    "saints_legend_siglum": "ni",
+    "foliation": {
+      "1..28": "44v",
+      "29...": "45r"
+    },
+    "dictionary": {
+      // STARTS ABOVE FOR NICHOLAS
+      "Andreu": "<span class='personal-name saint andrew-the-apostle'>Andreu</span>",
+      "andreu": "<span class='personal-name saint andrew-the-apostle'>Andreu</span>",
+      "andrew": "<span class='personal-name saint andrew-the-apostle'>Andrew</span>",
+      "andru": "<span class='personal-name saint andrew-the-apostle'>Andru</span>",
+      "petrus": "<span class='personal-name saint peter-the-apostle'>Petrus</span>",
+      "¶ Prím̃ qo̅": "<span class='expan latin-abbr latin-phrase'>¶ Príma questıo</span>",
+      "¶ Scd͛a": "<span class='expan latin-abbr latin-phrase'>¶ Secunda</span>",
+      "queſto̅": "<span class='expan latin-abbr latin-phrase'>questıo</span>",
+      "¶ Trıa qo̅": "<span class='expan latin-abbr latin-phrase'>¶ Tertia questıo</span>",
+      "ſ": "s",
+      "he̅": "he<i class='expan nasel-expan m-expan'>m</i>",
+      "e̅": "e<i class='expan nasel-expan n-expan'>n</i>",
+      "wo̅man": "wo<i class='expan nasel-expan m-expan'>m</i>man",
+      "Da̅mısele": "Da<i class='expan nasel-expan m-expan'>m</i>mısele",
+      "Da̅mıſele": "Da<i class='expan nasel-expan m-expan'>m</i>mısele",
+      "a̅": "a<i class='expan nasel-expan n-expan'>n</i>",
+      "fro̅": "fro<i class='expan nasel-expan m-expan'>m</i>",
+      "o̅": "o<i class='expan nasel-expan n-expan'>n</i>",
+      "u̅": "u<i class='expan nasel-expan n-expan'>n</i>",
+      "ᵉ": "<i class='expan vowel-expan e-expan'>e</i>",
+      "ıͨ": "i<i class='expan const-expan c-expan'>c</i>",
+      "p͛cıouſe": "p<i class='expan rotic-expan er-expan'>re</i>cıouſe",
+      "͛": "<i class='expan rotic-expan er-expan'>er</i>",
+      "crıſtendom": "<span class='place-name Christendom'>Crıſtendom</span>",
+      "engelonde": "<span class='place-name England'>Engelond</span>",
+      "conſtantınnople": "<span class='place-name Constantinople'>Conſtantınnople</span>",
+      "patras": "<span class='place-name Patras'>Patras</span>",
+      "Egeas": "<span class='personal-name egeas-proconsol'>Egeas</span>",
+      "egeas": "<span class='personal-name egeas-proconsol'>Egeas</span>",
+      "þᵗ": "þ<i class='expan that-expan'>at</i>",
+      "Þᵗ": "þ<i class='expan that-expan'>at</i>",
+      "gıwes": "<span class='proper-name jews'>Gıwes</span>",
+      "ı̅": "i<i class='expan nasel-expan n-expan'>m</i>",
+      "ꝯ": "<i class='abbr latin-abbr con-abbr'>con</i>",
+      "Maxılle": "<span class='personal-name maxille-proconsul-egeas-wife'>Maxılle</span>",
+      "ᷓ": "<i expan rotic-expan ra-expan>ra</i>",
+      "wᵗ": "w<i class='expan with-expan'>ith</i>",
+      "᷑": "<i class='expan rotic-expan our-expan'>our</i>"
+    }
+  }
+}
