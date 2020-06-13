@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.5.7'
+ruby '2.7.0'
 
 gem 'cancancan', '~> 2.0'
 gem 'coveralls', require: false
@@ -14,7 +14,7 @@ gem 'dry-configurable', '0.9.0' # pin version because later version conflicts wi
 gem 'pg'
 gem 'puma', '~> 3.12' # app server
 gem 'rack-cors', require: 'rack/cors'
-gem 'rails', '~> 5.2.3'
+gem 'rails', '~> 6.0.3'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'
