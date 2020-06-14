@@ -9,7 +9,7 @@ Devise.setup do |config|
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
 
-  config.secret_key = ENV['DEVISE_JWT_SECRET_KEY']
+  config.secret_key = Settings.devise_jwt_secret_key
 
   # ==> JWT configuration
   config.jwt do |jwt|
