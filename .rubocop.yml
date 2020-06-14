@@ -11,6 +11,9 @@ AllCops:
 Rails:
   Enabled: true
 
+Rails/UniqueValidationWithoutIndex:
+  Enabled: false
+
 Rails/HttpStatus:
   EnforcedStyle: numeric
 
@@ -22,9 +25,6 @@ Metrics/BlockLength:
   Max: 100
   Exclude:
     - 'spec/**/*'
-
-Layout/LineLength:
-  Max: 120
 
 Metrics/MethodLength:
   Enabled: false
@@ -51,9 +51,33 @@ Layout/SpaceBeforeBlockBraces:
 Layout/EmptyLinesAroundClassBody:
   Enabled: false
 
+Layout/LineLength:
+  Max: 120
+
+Layout/EmptyLinesAroundAttributeAccessor:
+  Enabled: true
+
+Layout/SpaceAroundMethodCallOperator:
+  Enabled: true
+
+Lint/DeprecatedOpenSSLConstant:
+  Enabled: true
+
+Lint/MixedRegexpCaptureTypes:
+  Enabled: true
+
+Lint/RaiseException:
+  Enabled: true
+
+Lint/StructNewOverride:
+  Enabled: true
+
 Style/SymbolArray:
   Exclude:
     - 'Gemfile'
+
+Style/ExponentialNotation:
+  Enabled: true
 
 Style/EmptyMethod:
   Enabled: false
@@ -67,5 +91,14 @@ Style/HashTransformKeys:
 Style/HashTransformValues:
   Enabled: true
 
-Documentation:
+Style/RedundantRegexpCharacterClass:
+  Enabled: true
+
+Style/RedundantRegexpEscape:
+  Enabled: true
+
+Style/SlicingWithRange:
+  Enabled: true
+
+Style/Documentation:
   Enabled: false
