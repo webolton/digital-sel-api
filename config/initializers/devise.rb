@@ -13,7 +13,7 @@ Devise.setup do |config|
 
   # ==> JWT configuration
   config.jwt do |jwt|
-    jwt.secret = ENV['DEVISE_JWT_SECRET_KEY']
+    jwt.secret = Settings.devise_jwt_secret_key
     jwt.expiration_time = 1.day.to_i
   end
   config.navigational_formats = []

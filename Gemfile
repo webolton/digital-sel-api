@@ -9,7 +9,7 @@ gem 'cancancan', '~> 2.0'
 gem 'config'
 gem 'coveralls', require: false
 gem 'devise'
-gem 'devise-jwt', '~> 0.5.9'
+gem 'devise-jwt', '~> 0.6.0'
 gem 'dotenv-rails', require: 'dotenv/rails-now'
 gem 'dry-configurable', '0.9.0' # pin version because later version conflicts with devise-jwt
 gem 'pg'
