@@ -21,7 +21,7 @@ RSpec.describe 'POST /users/sign_in', type: :request do
     it 'returns valid JWT token' do
       do_action
       token = response.headers['Authorization'].split('Bearer ').last
-      expect(JWT.decode(token, ENV['DEVISE_JWT_SECRET_KEY']).first['sub']).to be_present
+      expect(JWT.decode(token, Settings.devise_jwt_secret_key).first['sub']).to be_present
     end
 
     it 'returns the correct user shape' do
