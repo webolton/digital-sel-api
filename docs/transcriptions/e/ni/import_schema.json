@@ -4,9 +4,11 @@
     "saints_legend_siglum": "ni",
     "foliation": {
       "1..28": "44v",
-      "29...": "45r"
+      "29..72": "45r",
+      "73...": "45v"
     },
     "dictionary": {
+      "mıre": "PLACENAME RESEARCH"
       // STARTS ABOVE FOR NICHOLAS
       "Andreu": "<span class='personal-name saint andrew-the-apostle'>Andreu</span>",
       "andreu": "<span class='personal-name saint andrew-the-apostle'>Andreu</span>",
