@@ -5,11 +5,12 @@
     "foliation": {
       "1..28": "44v",
       "29..72": "45r",
-      "73...": "45v"
+      "73..116": "45v",
+      "117...": "46r"
     },
     "dictionary": {
       "mıre": "PLACENAME RESEARCH",
-      "abít": "PLACENAME RESEARCH"
+      "abít": "PLACENAME RESEARCH",
       // STARTS ABOVE FOR NICHOLAS
       "Andreu": "<span class='personal-name saint andrew-the-apostle'>Andreu</span>",
       "andreu": "<span class='personal-name saint andrew-the-apostle'>Andreu</span>",
