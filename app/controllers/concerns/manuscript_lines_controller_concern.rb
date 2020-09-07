@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+# TODO: Reduce complexity
 
 module ManuscriptLinesControllerConcern
   extend ActiveSupport::Concern
@@ -45,7 +46,7 @@ module ManuscriptLinesControllerConcern
     end
   end
 
-  def create_manuscript_line_number(sel_line_number, foliation, note = false)
+  def create_manuscript_line_number(sel_line_number, foliation, note: false)
     foliation.each do |range_string, folio|
       range = range_string.split('..').inject{ |st_range, end_range| st_range.to_i..end_range.to_i }
       if range.include?(sel_line_number.to_i) # rubocop:disable Style/Next
@@ -64,7 +65,7 @@ module ManuscriptLinesControllerConcern
     ms_line.witness_line_number = key.split('.').first
     ms_line.sel_id = "#{witness.manuscript.siglum}-#{witness.saints_legend.siglum}-#{ms_line.witness_line_number}"
     ms_line.marginal_note = true
-    ms_line.ms_line_number = create_manuscript_line_number(ms_line.witness_line_number, foliation, true)
+    ms_line.ms_line_number = create_manuscript_line_number(ms_line.witness_line_number, foliation, note: true)
     if ms_line.save
       Rails.logger.warn("Saved #{ms_line.sel_id}")
     else
