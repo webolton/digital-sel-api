@@ -5,7 +5,7 @@ class ManuscriptLinesController < ApplicationController
   before_action :authenticate_user!
   authorize_resource
 
-  def create
+  def create # TODO: Simplify
     ms_siglum     = manuscript_line_params['ms_siglum']
     legend_siglum = manuscript_line_params['saints_legend_siglum']
     dictionary    = manuscript_line_params['dictionary']
