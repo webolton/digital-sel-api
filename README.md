@@ -72,6 +72,16 @@ Run the server:
 
     rubocop
 
+### Run the security audit
+
+Download the latest vulnerability data
+
+`bundle-audit check --update`
+
+Run `bundle-audit`
+
+`bundle-audit`
+
 ### Database Maintenance
 
 Though database state is not important to the software, it is very important to the project.

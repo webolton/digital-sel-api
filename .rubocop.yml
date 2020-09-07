@@ -6,7 +6,8 @@ AllCops:
     - "bin/**/*"     # Auto-generated
     - "vendor/**/*"  # We cannot solve the world's problems
     - 'db/migrate/*'
-  TargetRubyVersion: 2.4
+  TargetRubyVersion: 2.7
+  NewCops: enable
 
 Rails:
   Enabled: true

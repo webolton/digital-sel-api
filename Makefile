@@ -1,9 +1,13 @@
 #!/bin/bash
 
 # Run the project on port 4000
-PHONY : run-dev
+.PHONY: run-dev
 run-dev:
 	bin/rails server -p 4000
+
+.PHONY: test-all
+test-all:
+	bundle exec bundle-audit && bundle exec rspec && bundle exec rubocop
 
 # Make a database snapshot
 snapshot:
