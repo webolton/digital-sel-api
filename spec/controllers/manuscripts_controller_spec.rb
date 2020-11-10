@@ -20,7 +20,7 @@ RSpec.describe ManuscriptsController, type: :controller do
         do_action
         response_body['manuscripts'].map do |ms|
           expect(ms.keys).to match_array(
-            %w[date_range id shelfmark siglum status witness_count]
+            %w[date_range id shelfmark siglum status witness_count saints_legends]
           )
         end
       end
