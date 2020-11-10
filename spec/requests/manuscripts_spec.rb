@@ -24,7 +24,7 @@ RSpec.describe 'GET /manuscripts', type: :request do
     it 'returns the correct JSON body shape' do
       do_action
       expect(response_body['manuscripts'].map(&:keys).first).to eq(
-        %w[id shelfmark siglum status date_range witness_count]
+        %w[id shelfmark siglum status date_range witness_count saints_legends]
       )
     end
 
